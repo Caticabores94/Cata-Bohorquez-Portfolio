@@ -208,7 +208,6 @@ function Hero() {
         <div className={styles.heroGlowSecondary} />
         <div className={styles.heroGlowTertiary} />
       </div>
-          <SiteHeader />
       <div className={styles.heroContent}>
         <h1 className={`${styles.heroTitle} ${styles.fadeUp} ${styles.fadeStep1}`}>
           Designing digital experiences optimized for humans and AI
@@ -396,6 +395,7 @@ export default function HomePage() {
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.frame}>
+          <SiteHeader />
           <Hero />
           <div className={styles.content}>
             <About />
