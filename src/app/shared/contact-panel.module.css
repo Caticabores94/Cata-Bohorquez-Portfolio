@@ -224,6 +224,8 @@
   .linksMobile {
     display: grid;
     gap: 12px;
+    justify-items: center;
+    max-width: 360px;
     width: 100%;
   }
 
@@ -231,7 +233,8 @@
     align-items: center;
     display: grid;
     gap: 12px;
-    grid-template-columns: 24px minmax(0, 1fr);
+    grid-template-columns: 24px auto;
+    justify-content: center;
   }
 
   .linksMobile img {
@@ -243,6 +246,7 @@
     color: #ffffff;
     font-size: 1rem;
     line-height: 1.35;
+    text-align: center;
     text-decoration: underline;
     text-underline-offset: 4px;
   }
