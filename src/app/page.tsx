@@ -201,7 +201,7 @@ function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.heroBackdrop} aria-hidden="true">
-        <AmbientVideo className={styles.heroVideo} poster={heroPoster} src={heroVideo} />
+        <AmbientVideo className={styles.heroVideo} eager poster={heroPoster} src={heroVideo} />
         <div className={styles.heroVideoTint} />
         <div className={styles.heroFrameShade} />
         <div className={styles.heroGlowPrimary} />
