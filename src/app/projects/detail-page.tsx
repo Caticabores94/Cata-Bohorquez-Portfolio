@@ -2,6 +2,7 @@ import { Navigate, useParams } from "react-router-dom";
 import styles from "./detail-page.module.css";
 import { useDocumentTitle } from "../../lib/use-document-title";
 import { getExternalLinkProps } from "../../lib/link-utils";
+import { publicAsset } from "../../lib/public-asset";
 import {
   projectDetails,
   type AnalysisProjectDetail,
@@ -426,7 +427,7 @@ function renderStandard(detail: StandardProjectDetail) {
                     alt=""
                     aria-hidden="true"
                     className={styles.resultsLogo}
-                    src="/logos/Clear%20Vision%20For%20You/CV4U%20Logo.png"
+                    src={publicAsset("/logos/Clear%20Vision%20For%20You/CV4U%20Logo.png")}
                   />
                 ) : null}
               </div>

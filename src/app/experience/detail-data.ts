@@ -1,3 +1,5 @@
+import { publicAsset } from "../../lib/public-asset";
+
 export type ExperienceSummary = {
   slug: string;
   title: string;
@@ -41,30 +43,30 @@ export type ExperienceDetail = ExperienceSummary & {
   liveSites?: LiveSiteItem[];
 };
 
-const siteAcuvueUs = "/Experience images/Experience/Johnson/Rectangle 5.png";
-const siteOasysMax = "/Experience images/Experience/Johnson/Rectangle 5-1.png";
-const siteCv4u = "/Experience images/Experience/Johnson/Rectangle 5-2.png";
-const siteFindDoctor = "/Experience images/Experience/Johnson/Rectangle 5-3.png";
-const siteAcuvueBrazil = "/Experience images/Experience/Johnson/Rectangle 5-4.png";
-const siteAcuvueMexico = "/Experience images/Experience/Johnson/Rectangle 5-5.png";
+const siteAcuvueUs = publicAsset("/Experience images/Experience/Johnson/Rectangle 5.png");
+const siteOasysMax = publicAsset("/Experience images/Experience/Johnson/Rectangle 5-1.png");
+const siteCv4u = publicAsset("/Experience images/Experience/Johnson/Rectangle 5-2.png");
+const siteFindDoctor = publicAsset("/Experience images/Experience/Johnson/Rectangle 5-3.png");
+const siteAcuvueBrazil = publicAsset("/Experience images/Experience/Johnson/Rectangle 5-4.png");
+const siteAcuvueMexico = publicAsset("/Experience images/Experience/Johnson/Rectangle 5-5.png");
 
-const vipSiteVtc = "/Experience images/Experience/VIP/Experience/Big Content card.png";
-const vipSitePts = "/Experience images/Experience/VIP/Experience/Big Content card-1.png";
-const vipSiteVeinDoctor = "/Experience images/Experience/VIP/Experience/Big Content card-2.png";
-const vipSiteVip = "/Experience images/Experience/VIP/Experience/Big Content card-3.png";
-const vipSiteNeck = "/Experience images/Experience/VIP/Experience/Big Content card-4.png";
-const vipSiteBack = "/Experience images/Experience/VIP/Experience/Big Content card-5.png";
+const vipSiteVtc = publicAsset("/Experience images/Experience/VIP/Experience/Big Content card.png");
+const vipSitePts = publicAsset("/Experience images/Experience/VIP/Experience/Big Content card-1.png");
+const vipSiteVeinDoctor = publicAsset("/Experience images/Experience/VIP/Experience/Big Content card-2.png");
+const vipSiteVip = publicAsset("/Experience images/Experience/VIP/Experience/Big Content card-3.png");
+const vipSiteNeck = publicAsset("/Experience images/Experience/VIP/Experience/Big Content card-4.png");
+const vipSiteBack = publicAsset("/Experience images/Experience/VIP/Experience/Big Content card-5.png");
 
-const camaraOutcome = "/Experience images/Experience/Cámara de comercio/Experience/Rectangle 5.png";
+const camaraOutcome = publicAsset("/Experience images/Experience/Cámara de comercio/Experience/Rectangle 5.png");
 
-const visitWebsite = "/Experience images/Experience/Visit/Experience/Rectangle 5.png";
-const visitInstagram = "/Experience images/Experience/Visit/Experience/Rectangle 5-1.png";
+const visitWebsite = publicAsset("/Experience images/Experience/Visit/Experience/Rectangle 5.png");
+const visitInstagram = publicAsset("/Experience images/Experience/Visit/Experience/Rectangle 5-1.png");
 
-const lccMesa = "/Experience images/Experience/Low Carbon City/Experience/Rectangle 5.png";
-const lccForum = "/Experience images/Experience/Low Carbon City/Experience/Rectangle 5-1.png";
-const lccWebsite = "/Experience images/Experience/Low Carbon City/Experience/Rectangle 5-2.png";
+const lccMesa = publicAsset("/Experience images/Experience/Low Carbon City/Experience/Rectangle 5.png");
+const lccForum = publicAsset("/Experience images/Experience/Low Carbon City/Experience/Rectangle 5-1.png");
+const lccWebsite = publicAsset("/Experience images/Experience/Low Carbon City/Experience/Rectangle 5-2.png");
 
-const alestraShowcase = "/Experience images/Alestra image.png";
+const alestraShowcase = publicAsset("/Experience images/Alestra image.png");
 
 export const experienceSummaries: readonly ExperienceSummary[] = [
   {
@@ -72,28 +74,28 @@ export const experienceSummaries: readonly ExperienceSummary[] = [
     title: "Johnson & Johnson",
     role: "Senior UI|UX designer",
     years: "2023 - Current",
-    logo: "/logos/Johnson & Johnson Logo color.png"
+    logo: publicAsset("/logos/Johnson & Johnson Logo color.png")
   },
   {
     slug: "alestra-movil",
     title: "Alestra Móvil",
     role: "Product Designer",
     years: "2025",
-    logo: "/logos/Alestra logo color.png"
+    logo: publicAsset("/logos/Alestra logo color.png")
   },
   {
     slug: "vip-medical-group",
     title: "VIP Medical Group",
     role: "Product Designer & Colombian Marketing Manager",
     years: "2020 - 2023",
-    logo: "/logos/vip.png"
+    logo: publicAsset("/logos/vip.png")
   },
   {
     slug: "camara-de-comercio",
     title: "Cámara de Comercio",
     role: "Brand consultant",
     years: "2020",
-    logo: "/logos/VTC.png"
+    logo: publicAsset("/logos/VTC.png")
   },
   {
     slug: "visit-santa-marta",

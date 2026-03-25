@@ -1,9 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
+import { publicAsset } from "../../lib/public-asset";
 import { CALENDLY_URL } from "../../lib/site-config";
 import MobileNav from "./mobile-nav";
 import styles from "./site-header.module.css";
 
-const brandIconAsset = "/Logo Catalina Bohorquez.png";
+const brandIconAsset = publicAsset("/Logo Catalina Bohorquez.png");
 
 const navLinks = [
   { href: "/about", label: "About" },

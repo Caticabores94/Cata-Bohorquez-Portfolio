@@ -1,10 +1,11 @@
 import styles from "./page.module.css";
+import { publicAsset } from "../../lib/public-asset";
 import { useDocumentTitle } from "../../lib/use-document-title";
 import SiteFooter from "../shared/site-footer";
 import SiteHeader from "../shared/site-header";
 
-const aboutIntroImage = "/Getting to know Cata.png";
-const aboutLifeImage = "/What about Cata outside the work environment_.png";
+const aboutIntroImage = publicAsset("/Getting to know Cata.png");
+const aboutLifeImage = publicAsset("/What about Cata outside the work environment_.png");
 
 const studies = [
   {
@@ -89,7 +90,7 @@ export default function AboutPage() {
                   <article className={styles.studyCard} key={item.degree}>
                     <div className={styles.studyBadge} aria-hidden="true">
                       <span className={styles.studyDot} />
-                      <img alt="" className={styles.studyIcon} src="/Logo Catalina Bohorquez.png" />
+                      <img alt="" className={styles.studyIcon} src={publicAsset("/Logo Catalina Bohorquez.png")} />
                     </div>
                     <p className={styles.studyDegree}>{item.degree}</p>
                     <div className={styles.studyDivider} aria-hidden="true" />

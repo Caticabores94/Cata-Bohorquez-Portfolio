@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import styles from "./page.module.css";
 import ReviewsCarousel, { type ReviewItem } from "./reviews-carousel";
+import { publicAsset } from "../../lib/public-asset";
 import { useDocumentTitle } from "../../lib/use-document-title";
 import { experienceSummaries } from "./detail-data";
 import SiteFooter from "../shared/site-footer";
 import SiteHeader from "../shared/site-header";
 
-const experienceHeroImage = "/Assets/Experience image.png";
-const logoJnj = "/logos/Johnson & Johnson Logo color.png";
-const logoAlestra = "/logos/Alestra logo color.png";
-const logoVip = "/logos/vip.png";
-const logoCamera = "/Experience images/Cámara de comercio.png";
+const experienceHeroImage = publicAsset("/Assets/Experience image.png");
+const logoJnj = publicAsset("/logos/Johnson & Johnson Logo color.png");
+const logoAlestra = publicAsset("/logos/Alestra logo color.png");
+const logoVip = publicAsset("/logos/vip.png");
+const logoCamera = publicAsset("/Experience images/Cámara de comercio.png");
 
 const featuredExperiences = experienceSummaries.slice(0, 3).map((item) => {
   if (item.slug === "johnson-and-johnson") {

@@ -1,28 +1,29 @@
 import { Link } from "react-router-dom";
 import styles from "./page.module.css";
+import { publicAsset } from "../../lib/public-asset";
 import { useDocumentTitle } from "../../lib/use-document-title";
 import { getExternalLinkProps } from "../../lib/link-utils";
 import AmbientVideo from "../shared/ambient-video";
 import SiteFooter from "../shared/site-footer";
 import SiteHeader from "../shared/site-header";
 
-const contactPhoto = "/Catalina Bohórquez.png";
-const contactVideo = "/Contact%20video.mp4";
-const phoneIcon = "/contact-phone.svg";
-const mailIcon = "/contact-mail.svg";
-const linkedinIcon = "/contact-linkedin.svg";
+const contactPhoto = publicAsset("/Catalina Bohórquez.png");
+const contactVideo = publicAsset("/Contact%20video.mp4");
+const phoneIcon = publicAsset("/contact-phone.svg");
+const mailIcon = publicAsset("/contact-mail.svg");
+const linkedinIcon = publicAsset("/contact-linkedin.svg");
 
-const cardAcuvue = "/Projects/Rectangle%205.png";
-const cardGeoAcuvue = "/Projects/Rectangle%205-1.png";
-const cardJapanese = "/Projects/Rectangle%205-2.png";
-const cardGeoJjv = "/Projects/Group%205.png";
-const cardPortal = "/Projects/Rectangle%205-3.png";
-const cardVein = "/Projects/Rectangle%205-4.png";
-const cardPts = "/Projects/Rectangle%205-5.png";
-const cardVeinWomen = "/Projects/Group%205-1.png";
-const cardInsurance = "/Projects/Rectangle%205-6.png";
-const cardCostCalculator = "/Projects/Group%205-3.png";
-const cv4uLogo = "/logos/Clear Vision For You/CV4U Logo.png";
+const cardAcuvue = publicAsset("/Projects/Rectangle%205.png");
+const cardGeoAcuvue = publicAsset("/Projects/Rectangle%205-1.png");
+const cardJapanese = publicAsset("/Projects/Rectangle%205-2.png");
+const cardGeoJjv = publicAsset("/Projects/Group%205.png");
+const cardPortal = publicAsset("/Projects/Rectangle%205-3.png");
+const cardVein = publicAsset("/Projects/Rectangle%205-4.png");
+const cardPts = publicAsset("/Projects/Rectangle%205-5.png");
+const cardVeinWomen = publicAsset("/Projects/Group%205-1.png");
+const cardInsurance = publicAsset("/Projects/Rectangle%205-6.png");
+const cardCostCalculator = publicAsset("/Projects/Group%205-3.png");
+const cv4uLogo = publicAsset("/logos/Clear Vision For You/CV4U Logo.png");
 
 const contactItems = [
   {

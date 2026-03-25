@@ -1,3 +1,5 @@
+import { publicAsset } from "../../lib/public-asset";
+
 export type ProjectIntroBlock = {
   title: string;
   body: string;
@@ -126,7 +128,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "pts-microsites": {
     kind: "microsites",
     title: "Microsites For Pain Treatment Specialists",
-    heroLaptopImage: "/Projects/Group%2065.png",
+    heroLaptopImage: publicAsset("/Projects/Group%2065.png"),
     introBlocks: [
       {
         title: "The Problem",
@@ -153,11 +155,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
         cards: [
           {
             title: "Neck Center New Jersey",
-            image: "/Projects/Projects/Group%205.png"
+            image: publicAsset("/Projects/Projects/Group%205.png")
           },
           {
             title: "Neck Center New York",
-            image: "/Projects/Projects/Rectangle%205.png"
+            image: publicAsset("/Projects/Projects/Rectangle%205.png")
           }
         ]
       },
@@ -171,11 +173,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
         cards: [
           {
             title: "Back Center New York",
-            image: "/Projects/Projects/Rectangle%205-1.png"
+            image: publicAsset("/Projects/Projects/Rectangle%205-1.png")
           },
           {
             title: "Back Center New Jersey",
-            image: "/Projects/Projects/Rectangle%205-2.png"
+            image: publicAsset("/Projects/Projects/Rectangle%205-2.png")
           }
         ]
       },
@@ -186,11 +188,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
         cards: [
           {
             title: "Spineline - Lead form",
-            image: "/Projects/Projects/Group%205-1.png"
+            image: publicAsset("/Projects/Projects/Group%205-1.png")
           },
           {
             title: "Free services (Insurance verification + Spine pain medical advice)",
-            image: "/Projects/Rectangle%205-6.png"
+            image: publicAsset("/Projects/Rectangle%205-6.png")
           }
         ]
       },
@@ -201,11 +203,11 @@ export const projectDetails: Record<string, ProjectDetail> = {
         cards: [
           {
             title: "Spineline - Lead form",
-            image: "/Projects/Projects/Group%205-2.png"
+            image: publicAsset("/Projects/Projects/Group%205-2.png")
           },
           {
             title: "Free services (Insurance verification + Spine pain medical advice)",
-            image: "/Projects/Rectangle%205-6.png"
+            image: publicAsset("/Projects/Rectangle%205-6.png")
           }
         ]
       }
@@ -248,7 +250,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "vein-doctor-for-women": {
     kind: "standard",
     title: "Vein Doctor For Women",
-    heroLaptopImage: "/Projects/Vein%20Doctor%20For%20Women/Group%2066.png",
+    heroLaptopImage: publicAsset("/Projects/Vein%20Doctor%20For%20Women/Group%2066.png"),
     introBlocks: [
       {
         title: "The Opportunity",
@@ -264,22 +266,22 @@ export const projectDetails: Record<string, ProjectDetail> = {
     solutionTitle: "The Solution",
     solutionBody:
       "A medical platform by women for women where they can find educational content specialized in them and their bodies. As well as an e-commerce-type experience to increase the online bookings and reduce the percentage of no-shows in the initial appointments.",
-    solutionImage: "/Projects/Vein%20Doctor%20For%20Women/Projects/Content%20card%20-%20Desktop.png",
+    solutionImage: publicAsset("/Projects/Vein%20Doctor%20For%20Women/Projects/Content%20card%20-%20Desktop.png"),
     featureCards: [
       {
         title: "1. Women who treat and understand the patient",
         description: "Showing female doctors to emphasize the value proposition",
-        image: "/Projects/Vein%20Doctor%20For%20Women/Projects/Rectangle%205.png"
+        image: publicAsset("/Projects/Vein%20Doctor%20For%20Women/Projects/Rectangle%205.png")
       },
       {
         title: "2. Relevant data",
         description: "Showing how the user could be part of the numbers to increase the engagement",
-        image: "/Projects/Vein%20Doctor%20For%20Women/Projects/Rectangle%205-1.png"
+        image: publicAsset("/Projects/Vein%20Doctor%20For%20Women/Projects/Rectangle%205-1.png")
       },
       {
         title: "3. What makes the user unique",
         description: "Varicose veins can come with pregnancy, something that only women can relate",
-        image: "/Projects/Vein%20Doctor%20For%20Women/Projects/Group%205.png"
+        image: publicAsset("/Projects/Vein%20Doctor%20For%20Women/Projects/Group%205.png")
       }
     ],
     hypothesisTitle: "Hypothesis",
@@ -305,7 +307,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "insurance-coverage-online": {
     kind: "standard",
     title: "Insurance Coverage Online (For PTS & VTC)",
-    heroLaptopImage: "/Projects/Insurance%20Coverage%20Online/Group%2062.png",
+    heroLaptopImage: publicAsset("/Projects/Insurance%20Coverage%20Online/Group%2062.png"),
     introBlocks: [
       {
         title: "The Problem",
@@ -321,7 +323,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     solutionTitle: "The Solution",
     solutionBody:
       "Create a simple 3-step form for the user to enter the insurance information and confirm it themself. This information will pass to the call center team to start the booking process and get the user an appointment as soon as possible.",
-    solutionImage: "/Projects/Rectangle%205-6.png",
+    solutionImage: publicAsset("/Projects/Rectangle%205-6.png"),
     hypothesisTitle: "Hypothesis",
     hypothesisBody:
       "Giving the user the responsibility of entering the information themself simulating an online booking/purchase, we will make sure the information will be correct when entering the call center.",
@@ -341,7 +343,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "vein-treatment-clinic": {
     kind: "standard",
     title: "Vein Treatment Clinic Main Website Redesign",
-    heroLaptopImage: "/Projects/Vein%20Treatment%20Clinic%20Main%20Website%20Redesign/Group%2063.png",
+    heroLaptopImage: publicAsset("/Projects/Vein%20Treatment%20Clinic%20Main%20Website%20Redesign/Group%2063.png"),
     introBlocks: [
       {
         title: "The Problem",
@@ -357,7 +359,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     solutionTitle: "The Solution",
     solutionBody:
       "Redesign of the homepage and general restructuring of the site using cognitive biases and bases of behavioral economics to create a space to teach patients about their condition and encourage them do online bookings.",
-    solutionImage: "/Projects/Rectangle%205-4.png",
+    solutionImage: publicAsset("/Projects/Rectangle%205-4.png"),
     hypothesisTitle: "Hypothesis",
     hypothesisBody:
       "Through a deep knowledge of our client not only as a patient but as a user and consumer of multiple information, we can transform the brand's communication to be more attractive and communicative.",
@@ -383,7 +385,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "clear-vision-for-you": {
     kind: "standard",
     title: "Clear Vision For You",
-    heroLaptopImage: "/Projects/Clear%20Vision%20For%20You/Group%2064.png",
+    heroLaptopImage: publicAsset("/Projects/Clear%20Vision%20For%20You/Group%2064.png"),
     introBlocks: [
       {
         title: "The Opportunity",
@@ -399,19 +401,19 @@ export const projectDetails: Record<string, ProjectDetail> = {
     solutionTitle: "The Solution",
     solutionBody:
       "Create a single-source-of-truth website with all the information a user could need, no matter what stage they are experiencing and present how J&J could be their special partner in each step with the brand services that solve every eye health need.",
-    solutionImage: "/Projects/Clear%20Vision%20For%20You/Projects/Content%20card%20-%20Desktop.png",
+    solutionImage: publicAsset("/Projects/Clear%20Vision%20For%20You/Projects/Content%20card%20-%20Desktop.png"),
     featureCards: [
       {
         title: "1. Navigation experience that unifies all topics",
-        image: "/Projects/Clear%20Vision%20For%20You/Projects/Rectangle%205.png"
+        image: publicAsset("/Projects/Clear%20Vision%20For%20You/Projects/Rectangle%205.png")
       },
       {
         title: "2. Doctor finder if anyone needs to be diagnosed or needs a new prescription",
-        image: "/Projects/Clear%20Vision%20For%20You/Projects/Rectangle%205-1.png"
+        image: publicAsset("/Projects/Clear%20Vision%20For%20You/Projects/Rectangle%205-1.png")
       },
       {
         title: "3. Presenting all J&J services to help the user understand how we can be there in every step",
-        image: "/Projects/Clear%20Vision%20For%20You/Projects/Group%205.png"
+        image: publicAsset("/Projects/Clear%20Vision%20For%20You/Projects/Group%205.png")
       }
     ],
     hypothesisTitle: "Hypothesis",
@@ -433,7 +435,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "acuvue-contact-lenses": {
     kind: "standard",
     title: "ACUVUE Contact Lenses",
-    heroLaptopImage: "/Projects/ACUVUE%20Contact%20Lenses/Group%2051.png",
+    heroLaptopImage: publicAsset("/Projects/ACUVUE%20Contact%20Lenses/Group%2051.png"),
     introBlocks: [
       {
         title: "The Opportunity",
@@ -449,39 +451,39 @@ export const projectDetails: Record<string, ProjectDetail> = {
     solutionTitle: "The Solution",
     solutionBody:
       "Create a single-source-of-truth design system with all the components needed to satisfy all markets needs. Examples with ACUVUE in Japan, Colombia and USA.",
-    solutionImage: "/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%20143531.png",
+    solutionImage: publicAsset("/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%20143531.png"),
     secondaryFeatureHeading: "Flexible Design System",
-    secondaryFeatureImage: "/Projects/ACUVUE%20Contact%20Lenses/Projects/Content%20card%20-%20Desktop%202.png",
+    secondaryFeatureImage: publicAsset("/Projects/ACUVUE%20Contact%20Lenses/Projects/Content%20card%20-%20Desktop%202.png"),
     featureCards: [
       {
         title: "1. Basic components: foundational, building block design elements",
         description: "Examples: Buttons, input fields, tabs",
-        image: "/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%205.png"
+        image: publicAsset("/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%205.png")
       },
       {
         title: "2. Content providing components: highlight copy, media, and key information",
         description: "Examples: Hero banners, cards, text content block",
-        image: "/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%205-1.png"
+        image: publicAsset("/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%205-1.png")
       },
       {
         title: "3. Global page components: used universally for key functions, such as navigation",
         description: "Examples: Global navigation, breadcrumbs, surveys",
-        image: "/Projects/ACUVUE%20Contact%20Lenses/Projects/Group%205.png"
+        image: publicAsset("/Projects/ACUVUE%20Contact%20Lenses/Projects/Group%205.png")
       }
     ],
     secondaryFeatureCards: [
       {
         title: "4. Experience-specific components: unique, non-universal specific use-case components",
         description: "Examples: Professional fitting calculators, Laser Vision cost calculator",
-        image: "/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%205-2.png"
+        image: publicAsset("/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%205-2.png")
       },
       {
         title: "5. Doctor finder experience: lead the user to continue the experience outside the website and finish the purchase intent",
-        image: "/Projects/ACUVUE%20Contact%20Lenses/Projects/Group%205-1.png"
+        image: publicAsset("/Projects/ACUVUE%20Contact%20Lenses/Projects/Group%205-1.png")
       },
       {
         title: "6. Creating new interactivity tools like product quiz to increase the user engagement (Gen Z and Alpha)",
-        image: "/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%205-3.png"
+        image: publicAsset("/Projects/ACUVUE%20Contact%20Lenses/Projects/Rectangle%205-3.png")
       }
     ],
     hypothesisTitle: "Hypothesis",
@@ -503,7 +505,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "geo-optimization-acuvue": {
     kind: "analysis",
     title: "GEO optimization for ACUVUE",
-    heroLaptopImage: "/Projects/GEO%20optimization%20for%20ACUVUE/Group%2052.png",
+    heroLaptopImage: publicAsset("/Projects/GEO%20optimization%20for%20ACUVUE/Group%2052.png"),
     introBlocks: [
       {
         title: "The Opportunity",
@@ -639,7 +641,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "geo-optimization-jjv-pro": {
     kind: "analysis",
     title: "GEO optimization for JJV PRO",
-    heroLaptopImage: "/Projects/GEO%20optimization%20for%20JJV%20PRO/Group%2053.png",
+    heroLaptopImage: publicAsset("/Projects/GEO%20optimization%20for%20JJV%20PRO/Group%2053.png"),
     introBlocks: [
       {
         title: "The Opportunity",
@@ -755,7 +757,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   "japanese-learning-app": {
     kind: "builder",
     title: "Japanese learning app",
-    heroLaptopImage: "/Projects/Japanese%20learning%20app/Group%2054.png",
+    heroLaptopImage: publicAsset("/Projects/Japanese%20learning%20app/Group%2054.png"),
     ctaLabel: "Check the app here",
     ctaHref: "https://japaneselearningapp.onrender.com/",
     introBlocks: [

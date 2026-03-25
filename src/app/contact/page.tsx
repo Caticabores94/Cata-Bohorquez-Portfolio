@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import styles from "./page.module.css";
+import { publicAsset } from "../../lib/public-asset";
 import { useDocumentTitle } from "../../lib/use-document-title";
 import { getExternalLinkProps } from "../../lib/link-utils";
 import { CALENDLY_URL } from "../../lib/site-config";
 import SiteFooter from "../shared/site-footer";
 import SiteHeader from "../shared/site-header";
 
-const contactPhoto = "/Catalina Bohórquez.png";
-const phoneIcon = "/contact-phone.svg";
-const mailIcon = "/contact-mail.svg";
-const linkedinIcon = "/contact-linkedin.svg";
+const contactPhoto = publicAsset("/Catalina Bohórquez.png");
+const phoneIcon = publicAsset("/contact-phone.svg");
+const mailIcon = publicAsset("/contact-mail.svg");
+const linkedinIcon = publicAsset("/contact-linkedin.svg");
 
 const contactItems = [
   {

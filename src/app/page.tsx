@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./page.module.css";
+import { publicAsset } from "../lib/public-asset";
 import { useDocumentTitle } from "../lib/use-document-title";
 import { getExternalLinkProps } from "../lib/link-utils";
 import { CALENDLY_URL } from "../lib/site-config";
@@ -7,25 +8,25 @@ import AmbientVideo from "./shared/ambient-video";
 import SiteFooter from "./shared/site-footer";
 import SiteHeader from "./shared/site-header";
 
-const aboutPhoto = "/Catalina Bohórquez.png";
-const experienceJnj = "/Assets/Johnson & Johnson.png";
-const experienceAlestra = "/Assets/Alestra.png";
-const experienceVip = "/Assets/VIP Medical Group.png";
-const logoVeinClinic = "/logos/VTC.png";
-const logoVipMedical = "/logos/vip.png";
-const logoAcuvue = "/logos/Acuvue.png";
-const logoJnj = "/logos/Johnson & Johnson Logo Horisontal.png";
-const logoAlestra = "/logos/Alestra.png";
-const logoPainTreatment = "/logos/PTS.png";
-const phoneIcon = "/contact-phone.svg";
-const mailIcon = "/contact-mail.svg";
-const linkedinIcon = "/contact-linkedin.svg";
-const heroVideo = "/home-hero-540.mp4";
-const heroPoster = "/home-hero-540.mp4.png";
-const projectAcuvueVideo = "/ACUVUE%20LOGO%20ANIMATED.mp4";
-const projectAcuvueGeoVideo = "/ACUVUE%20GEO%20Optimization.mp4";
-const projectJapanVideo = "/Japanese%20learning%20app%20video.mp4";
-const contactVideo = "/Contact%20video.mp4";
+const aboutPhoto = publicAsset("/Catalina Bohórquez.png");
+const experienceJnj = publicAsset("/Assets/Johnson & Johnson.png");
+const experienceAlestra = publicAsset("/Assets/Alestra.png");
+const experienceVip = publicAsset("/Assets/VIP Medical Group.png");
+const logoVeinClinic = publicAsset("/logos/VTC.png");
+const logoVipMedical = publicAsset("/logos/vip.png");
+const logoAcuvue = publicAsset("/logos/Acuvue.png");
+const logoJnj = publicAsset("/logos/Johnson & Johnson Logo Horisontal.png");
+const logoAlestra = publicAsset("/logos/Alestra.png");
+const logoPainTreatment = publicAsset("/logos/PTS.png");
+const phoneIcon = publicAsset("/contact-phone.svg");
+const mailIcon = publicAsset("/contact-mail.svg");
+const linkedinIcon = publicAsset("/contact-linkedin.svg");
+const heroVideo = publicAsset("/home-hero-540.mp4");
+const heroPoster = publicAsset("/home-hero-540.mp4.png");
+const projectAcuvueVideo = publicAsset("/ACUVUE%20LOGO%20ANIMATED.mp4");
+const projectAcuvueGeoVideo = publicAsset("/ACUVUE%20GEO%20Optimization.mp4");
+const projectJapanVideo = publicAsset("/Japanese%20learning%20app%20video.mp4");
+const contactVideo = publicAsset("/Contact%20video.mp4");
 
 const experienceItems = [
   {
@@ -108,10 +109,10 @@ const contactItems = [
 ] as const;
 
 const aboutCapabilityItems = [
-  { icon: "/Icons about/UI|UX.svg", iconClassName: styles.aboutCapabilityIconUiux, label: "UI|UX" },
-  { icon: "/Icons about/Human.svg", iconClassName: styles.aboutCapabilityIconHuman, label: "Human" },
-  { icon: "/Icons about/Product.svg", iconClassName: styles.aboutCapabilityIconProduct, label: "Product" },
-  { icon: "/Icons about/Ai.svg", iconClassName: styles.aboutCapabilityIconAi, label: "AI" }
+  { icon: publicAsset("/Icons about/UI|UX.svg"), iconClassName: styles.aboutCapabilityIconUiux, label: "UI|UX" },
+  { icon: publicAsset("/Icons about/Human.svg"), iconClassName: styles.aboutCapabilityIconHuman, label: "Human" },
+  { icon: publicAsset("/Icons about/Product.svg"), iconClassName: styles.aboutCapabilityIconProduct, label: "Product" },
+  { icon: publicAsset("/Icons about/Ai.svg"), iconClassName: styles.aboutCapabilityIconAi, label: "AI" }
 ] as const;
 
 type LogoKind =
