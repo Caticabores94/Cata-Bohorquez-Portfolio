@@ -11,13 +11,13 @@ enum OptimizeVideoError: Error, CustomStringConvertible {
   var description: String {
     switch self {
     case .invalidArguments:
-      return "Usage: swift scripts/optimize-video.swift <input> <output> [540p|720p]"
+      return "Usage: swift scripts/optimize-video.swift <input> <output> [low|540p|720p]"
     case .unsupportedPreset:
       return "Could not create an export session with the requested preset."
     case .unsupportedFileType:
       return "The export session does not support .mp4 or .m4v output."
     case let .unknownPreset(name):
-      return "Unknown preset '\(name)'. Use 540p or 720p."
+      return "Unknown preset '\(name)'. Use low, 540p or 720p."
     case let .exportFailed(message):
       return "Video export failed: \(message)"
     }
@@ -38,6 +38,8 @@ func optimizeVideo() throws {
   let presetName: String
 
   switch presetArgument {
+  case "low":
+    presetName = AVAssetExportPresetLowQuality
   case "540p":
     presetName = AVAssetExportPreset960x540
   case "720p":

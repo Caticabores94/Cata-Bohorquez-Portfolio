@@ -2,12 +2,15 @@ import { useEffect, useRef, useState } from "react";
 
 type AmbientVideoProps = {
   className: string;
+  eager?: boolean;
   poster?: string;
   src: string;
 };
 
-export default function AmbientVideo({ className, poster, src }: AmbientVideoProps) {
+export default function AmbientVideo({ className, eager = false, poster, src }: AmbientVideoProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isNearViewport, setIsNearViewport] = useState(eager);
   const [shouldRenderVideo, setShouldRenderVideo] = useState(true);
 
   useEffect(() => {
@@ -19,12 +22,39 @@ export default function AmbientVideo({ className, poster, src }: AmbientVideoPro
 
     if (mediaQuery.matches) {
       setShouldRenderVideo(false);
-    };
+      return;
+    }
+
+    if (navigator.connection?.saveData) {
+      setShouldRenderVideo(false);
+    }
   }, []);
 
   useEffect(() => {
+    if (eager || typeof window === "undefined" || !containerRef.current) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setIsNearViewport(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "240px 0px" }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [eager]);
+
+  useEffect(() => {
     const video = videoRef.current;
-    if (!video || !shouldRenderVideo) {
+    if (!video || !shouldRenderVideo || !isNearViewport) {
       return;
     }
 
@@ -39,11 +69,11 @@ export default function AmbientVideo({ className, poster, src }: AmbientVideoPro
     };
 
     void startPlayback();
-  }, [shouldRenderVideo, src]);
+  }, [isNearViewport, shouldRenderVideo, src]);
 
   return (
-    <div style={{ display: "contents" }}>
-      {shouldRenderVideo ? (
+    <div ref={containerRef} style={{ display: "contents" }}>
+      {shouldRenderVideo && isNearViewport ? (
         <video
           autoPlay
           className={className}
@@ -51,7 +81,7 @@ export default function AmbientVideo({ className, poster, src }: AmbientVideoPro
           muted
           playsInline
           poster={poster}
-          preload="metadata"
+          preload={eager ? "metadata" : "none"}
           ref={videoRef}
         >
           <source src={src} type="video/mp4" />
