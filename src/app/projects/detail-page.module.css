@@ -1,0 +1,1526 @@
+.page {
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.76);
+  --border: #222222;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(148, 91, 255, 0.24) 0%, rgba(148, 91, 255, 0.09) 24%, transparent 46%),
+    radial-gradient(circle at 48% 26%, rgba(81, 152, 255, 0.1) 0%, rgba(81, 152, 255, 0.03) 18%, transparent 38%),
+    radial-gradient(circle at 96% 76%, rgba(132, 31, 220, 0.3) 0%, rgba(132, 31, 220, 0.1) 22%, transparent 44%),
+    linear-gradient(180deg, #000000 0%, #05010b 58%, #000000 100%);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.pageLight {
+  background: #ffffff;
+  color: #000000;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1662px;
+  padding: 0 75px;
+  width: 100%;
+}
+
+.frame {
+  background: transparent;
+  margin: 0 auto;
+  max-width: 1512px;
+  overflow: visible;
+  width: 100%;
+}
+
+.frameLight {
+  background: #ffffff;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 75px 0;
+  position: relative;
+  width: 100%;
+  z-index: 30;
+}
+
+.headerLight {
+  background: #000000;
+  padding-bottom: 24px;
+}
+
+.brand {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+}
+
+.brandIcon {
+  flex: 0 0 auto;
+  height: 40px;
+  object-fit: contain;
+  width: auto;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+.navLink,
+.navLinkActive {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.navLinkActive {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.navButton {
+  align-items: center;
+  border: 0.75px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.703rem;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 26px;
+  padding: 6px 45px;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.fadeUp {
+  animation: fade-up 0.55s ease forwards;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.fadeStep1 { animation-delay: 0.1s; }
+.fadeStep2 { animation-delay: 0.22s; }
+.fadeStep3 { animation-delay: 0.34s; }
+.fadeStep4 { animation-delay: 0.46s; }
+
+.detailPage {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 80px 0;
+  position: relative;
+}
+
+.auraLeft,
+.auraRight {
+  display: none;
+}
+
+.auraLeft {
+  background: radial-gradient(circle, rgba(123, 27, 201, 0.34) 0%, rgba(123, 27, 201, 0.08) 38%, rgba(123, 27, 201, 0) 76%);
+  height: 700px;
+  left: -320px;
+  top: 500px;
+  width: 700px;
+}
+
+.auraRight {
+  background: radial-gradient(circle, rgba(128, 20, 214, 0.58) 0%, rgba(128, 20, 214, 0.12) 42%, rgba(128, 20, 214, 0) 78%);
+  height: 860px;
+  right: -340px;
+  top: 2480px;
+  width: 860px;
+}
+
+.heroSection,
+.introSection,
+.solutionSection,
+.strategyBand,
+.processSection,
+.resultsSection {
+  position: relative;
+  z-index: 1;
+}
+
+.heroSection {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 126px;
+  text-align: center;
+}
+
+.heroCopy {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 980px;
+}
+
+.eyebrow,
+.heroDivider,
+.bandLabel {
+  display: none;
+}
+
+.heroTitle {
+  font-size: clamp(2.35rem, 4.4vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin: 0;
+  max-width: 18ch;
+}
+
+.heroLaptop {
+  display: block;
+  height: auto;
+  max-width: 732px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.heroPhone {
+  display: none;
+}
+
+.introSection {
+  align-items: center;
+  display: grid;
+  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) 732px;
+  padding: 0 100px;
+}
+
+.introCopy {
+  display: grid;
+  gap: 60px;
+}
+
+.introBlock {
+  display: grid;
+  gap: 12px;
+}
+
+.introVisual {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 1.2rem + 1vw, 2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.bodyText {
+  color: var(--muted);
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.solutionSection {
+  background:
+    radial-gradient(circle at 10% 14%, rgba(141, 49, 255, 0.36) 0%, rgba(141, 49, 255, 0.12) 22%, rgba(141, 49, 255, 0) 46%),
+    radial-gradient(circle at 85% 96%, rgba(109, 17, 183, 0.34) 0%, rgba(109, 17, 183, 0.12) 18%, rgba(109, 17, 183, 0) 44%),
+    linear-gradient(157deg, rgba(9, 9, 9, 0.98) 8%, rgba(0, 0, 0, 0.96) 74%, rgba(67, 5, 119, 0.74) 126%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  display: grid;
+  gap: 60px;
+  margin: 0 100px;
+  overflow: hidden;
+  padding: 80px;
+}
+
+.solutionHeader {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 760px;
+  text-align: center;
+}
+
+.solutionGrid {
+  display: grid;
+  gap: 80px;
+}
+
+.solutionRow {
+  display: grid;
+  gap: 40px;
+  justify-items: center;
+  text-align: center;
+}
+
+.solutionMeta {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  max-width: 840px;
+}
+
+.solutionMeta h3,
+.solutionMeta p,
+.solutionMeta li {
+  margin: 0;
+}
+
+.solutionMeta h3 {
+  font-size: clamp(1.9rem, 1.4rem + 0.9vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.solutionMeta ol {
+  color: rgba(255, 255, 255, 0.84);
+  display: grid;
+  gap: 4px;
+  font-size: 1rem;
+  line-height: 1.45;
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.goal {
+  color: rgba(255, 255, 255, 0.84);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.goal strong { color: #ffffff; }
+.goal span { color: rgba(255, 255, 255, 0.72); }
+
+.solutionCards {
+  display: grid;
+  gap: 80px;
+  grid-template-columns: repeat(2, minmax(320px, 373px));
+  justify-content: center;
+  width: 100%;
+}
+
+.solutionCardsSingle {
+  grid-template-columns: minmax(320px, 373px);
+}
+
+.solutionCard {
+  display: grid;
+  gap: 24px;
+  text-align: left;
+  width: 100%;
+}
+
+.solutionCardFrame {
+  aspect-ratio: 2.01;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.solutionCardFrame img,
+.caseFeatureCardFrame img,
+.caseFeatureVisual img,
+.caseLargeImageFrame img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.solutionCard h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.strategyBand {
+  background: linear-gradient(115deg, rgba(8, 8, 8, 0.96) 0%, rgba(22, 4, 36, 0.96) 54%, rgba(99, 25, 146, 0.96) 100%);
+  border-radius: 12px;
+  display: grid;
+  gap: 80px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 100px;
+  overflow: hidden;
+  padding: 40px 44px;
+}
+
+.strategyBlock {
+  display: grid;
+  gap: 16px;
+}
+
+.strategyList {
+  color: rgba(255, 255, 255, 0.88);
+  display: grid;
+  gap: 8px;
+  font-size: 1rem;
+  line-height: 1.45;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.processSection {
+  display: grid;
+  gap: 40px;
+  padding: 0 100px;
+}
+
+.processGrid {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.processCard,
+.caseProcessCard {
+  display: grid;
+  gap: 14px;
+}
+
+.processCardHeader {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.processBadge {
+  align-items: center;
+  background: linear-gradient(135deg, #d34cff 0%, #8b2fff 100%);
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 700;
+  height: 1.75rem;
+  justify-content: center;
+  width: 1.75rem;
+}
+
+.processCard h3,
+.caseProcessCard h3 {
+  font-size: 1.5625rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.processCard ul {
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+  font-size: 1rem;
+  line-height: 1.45;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.resultsSection {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.98) 34%, rgba(90, 16, 138, 0.9) 130%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  display: grid;
+  gap: 16px;
+  margin: 0 100px;
+  padding: 28px 32px;
+}
+
+.micrositesResultsLayout {
+  align-items: center;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+}
+
+.micrositesResultsCopy {
+  display: grid;
+  gap: 16px;
+}
+
+.resultsList {
+  color: rgba(255, 255, 255, 0.78);
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.resultItem {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.micrositesResultsVisual {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(75, 176, 255, 0.2) 0%, rgba(75, 176, 255, 0.06) 30%, transparent 56%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.025) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: grid;
+  gap: 14px;
+  padding: 26px;
+}
+
+.micrositesResultsKicker {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.micrositesResultsMetric {
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.micrositesResultsLabel {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.micrositesResultsBars {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.micrositesResultsBarRow {
+  display: grid;
+  gap: 8px;
+}
+
+.micrositesResultsBarRow span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.micrositesResultsTrack {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.micrositesResultsBar {
+  background: linear-gradient(90deg, #8e31ff 0%, #4bb0ff 100%);
+  border-radius: inherit;
+  height: 100%;
+}
+
+.micrositesResultsBarWide { width: 72%; }
+.micrositesResultsBarMedium { width: 84%; }
+.micrositesResultsBarNarrow { width: 65%; }
+
+.footer {
+  align-items: center;
+  background: linear-gradient(90deg, #8001fe 0%, #8e31ff 56%, #7f00ff 100%);
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+  left: 50%;
+  margin-left: -50vw;
+  margin-top: 80px;
+  padding: 37px 126px;
+  position: relative;
+  width: 100vw;
+}
+
+.footerLight {
+  margin-top: 0;
+}
+
+.footerLogoLink {
+  display: inline-flex;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.footerLogo {
+  display: block;
+  height: 56px;
+  object-fit: contain;
+  width: auto;
+}
+
+.casePage {
+  color: var(--text);
+  display: grid;
+  gap: 0;
+  padding-bottom: 0;
+}
+
+.casePageSpacious {
+  gap: 40px;
+}
+
+.casePageExtraSpacious {
+  gap: 100px;
+}
+
+.casePageLight {
+  background: transparent;
+}
+
+.caseHero {
+  display: flex;
+  justify-content: center;
+  padding: 80px 100px;
+  text-align: center;
+}
+
+.caseHeroCopy {
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+}
+
+.caseHeroTitle {
+  font-size: clamp(2.8rem, 4.4vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin: 0;
+  max-width: 16ch;
+}
+
+.caseHeroTitleWide {
+  max-width: none;
+  white-space: nowrap;
+}
+
+.caseHeroDivider {
+  border-top: 2px solid rgba(255, 255, 255, 0.16);
+  width: min(814px, 100%);
+}
+
+.caseIntro {
+  align-items: start;
+  display: grid;
+  gap: 60px;
+  grid-template-columns: minmax(0, 570px) minmax(0, 1fr);
+  padding: 0 100px 40px;
+}
+
+.caseIntroCopy {
+  display: grid;
+  gap: 32px;
+}
+
+.caseIntroBlock {
+  display: grid;
+  gap: 12px;
+}
+
+.caseHeroVisual {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.caseHeroImage {
+  display: block;
+  height: auto;
+  max-width: 860px;
+  width: 100%;
+}
+
+.caseHeading {
+  font-size: clamp(1.75rem, 1.2rem + 1vw, 2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.caseSectionHeading {
+  font-size: clamp(1.75rem, 1.2rem + 1vw, 2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.caseSectionHeadingOffset {
+  padding-top: 40px;
+}
+
+.caseSubheading {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.caseBody {
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.casePrimaryCta {
+  align-items: center;
+  background: linear-gradient(135deg, #8e31ff 0%, #7f00ff 100%);
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 28px;
+  width: fit-content;
+}
+
+.caseSolutionSection,
+.caseStrategicSection,
+.caseSummarySection,
+.caseProcessSection {
+  display: grid;
+  gap: 40px;
+  padding: 80px 100px;
+}
+
+.caseSolutionPanel {
+  align-items: center;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(141, 49, 255, 0.28) 0%, rgba(141, 49, 255, 0.08) 24%, rgba(141, 49, 255, 0) 48%),
+    linear-gradient(150deg, rgba(10, 10, 10, 0.96) 10%, rgba(7, 7, 7, 0.94) 72%, rgba(67, 5, 119, 0.58) 126%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: minmax(0, 497px) minmax(0, 566px);
+  justify-content: center;
+  padding: 40px;
+}
+
+.caseSolutionCopy {
+  display: grid;
+  gap: 24px;
+}
+
+.caseFeatureVisual {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.caseFeatureVisual img {
+  height: auto;
+  object-fit: contain;
+}
+
+.caseFeatureGrid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.caseFeatureGridAfterSecondary {
+  padding-top: 100px;
+}
+
+.caseFeatureCard {
+  align-content: start;
+  display: grid;
+  gap: 20px;
+}
+
+.caseFeatureCardFrame {
+  aspect-ratio: 1.84;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.caseFeatureCard h3,
+.caseTextCard h3 {
+  font-size: 1.125rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.caseFeatureCard p,
+.caseTextCard p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.caseLargeImageFrame {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.caseSplitBand {
+  background: linear-gradient(115deg, rgba(8, 8, 8, 0.96) 0%, rgba(22, 4, 36, 0.96) 54%, rgba(99, 25, 146, 0.96) 100%);
+  border-radius: 12px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 100px;
+  padding: 80px 44px;
+}
+
+.caseSplitBlock {
+  display: grid;
+  gap: 16px;
+}
+
+.caseOrderedList,
+.caseResultsList,
+.caseBulletList,
+.caseProcessCard ul {
+  color: rgba(255, 255, 255, 0.82);
+  display: grid;
+  gap: 8px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.caseProcessGrid {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.caseResultsSection,
+.caseBandSection,
+.caseProblemBand {
+  background:
+    radial-gradient(circle at 10% 14%, rgba(141, 49, 255, 0.22) 0%, rgba(141, 49, 255, 0.08) 22%, rgba(141, 49, 255, 0) 44%),
+    linear-gradient(145deg, rgba(0, 0, 0, 0.98) 34%, rgba(90, 16, 138, 0.82) 130%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  display: grid;
+  gap: 24px;
+  margin: 0 100px;
+  padding: 80px;
+}
+
+.caseBandSectionSpacious {
+  padding: 72px 56px;
+}
+
+.expectedImpactLayout {
+  align-items: center;
+  display: grid;
+  gap: 56px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.expectedImpactLayoutBalanced {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.expectedImpactCopy {
+  display: grid;
+  gap: 24px;
+}
+
+.caseTextCardGrid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.caseTextCardGridSecondary {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1000px;
+}
+
+.caseStrategicSectionBalanced .caseTextCardGrid,
+.caseStrategicSectionBalanced .caseTextCardGridSecondary {
+  justify-content: center;
+}
+
+.caseStrategicSectionBalanced .caseTextCardGridSecondary {
+  grid-template-columns: repeat(2, minmax(0, 348px));
+  margin: 0 auto;
+}
+
+.caseTextCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  display: grid;
+  gap: 16px;
+  padding: 24px 28px;
+}
+
+.caseMetricResultsGrid {
+  display: grid;
+  gap: 40px 32px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.caseMetricResult {
+  align-content: start;
+  display: grid;
+  gap: 14px;
+}
+
+.caseMetricResult h3 {
+  font-size: 1.125rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.caseMetricBulletList {
+  color: rgba(255, 255, 255, 0.82);
+  display: grid;
+  gap: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.resultsHero {
+  align-items: stretch;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  margin-bottom: 20px;
+}
+
+.resultsHeroCopy {
+  display: grid;
+  gap: 18px;
+}
+
+.resultsHighlightGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 10px;
+}
+
+.resultsHighlightCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+}
+
+.resultsHighlightCard h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.resultsHighlightCard p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.resultsVisual {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(75, 176, 255, 0.22) 0%, rgba(75, 176, 255, 0.06) 30%, transparent 55%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.025) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: grid;
+  gap: 14px;
+  padding: 28px;
+}
+
+.resultsLogo {
+  display: block;
+  height: auto;
+  margin-top: 10px;
+  max-width: 140px;
+  width: 100%;
+}
+
+.resultsVisualKicker {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resultsVisualPrimary {
+  font-size: clamp(2.4rem, 4vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.resultsVisualSecondary {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.resultsVisualTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.resultsVisualTag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 12px;
+}
+
+.expectedImpactVisual {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(120, 70, 255, 0.3) 0%, rgba(120, 70, 255, 0.08) 28%, transparent 50%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: grid;
+  gap: 28px;
+  height: 100%;
+  margin-top: 0;
+  padding: 28px;
+}
+
+.expectedImpactVisualHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.expectedImpactPill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 14px;
+}
+
+.expectedImpactChart {
+  display: grid;
+  gap: 18px;
+}
+
+.expectedImpactBarGroup {
+  display: grid;
+  gap: 10px;
+}
+
+.expectedImpactBarGroup span {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.expectedImpactTrack {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.expectedImpactBar {
+  background: linear-gradient(90deg, #8e31ff 0%, #4bb0ff 100%);
+  border-radius: inherit;
+  height: 100%;
+}
+
+.expectedImpactBarWide { width: 88%; }
+.expectedImpactBarMedium { width: 74%; }
+.expectedImpactBarNarrow { width: 61%; }
+
+.processVisual {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(76, 175, 255, 0.18) 0%, rgba(76, 175, 255, 0.04) 26%, transparent 48%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: grid;
+  gap: 24px;
+  height: 100%;
+  padding: 28px;
+}
+
+.processVisualHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.processVisualLabel,
+.processVisualMeta {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.processVisualMeta {
+  color: rgba(255, 255, 255, 0.58);
+  text-align: right;
+}
+
+.processTimeline {
+  display: grid;
+  gap: 16px;
+}
+
+.processStep {
+  align-items: start;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 52px minmax(0, 1fr);
+  padding: 18px;
+}
+
+.processStepIndex {
+  align-items: center;
+  background: linear-gradient(135deg, rgba(142, 49, 255, 0.9) 0%, rgba(75, 176, 255, 0.9) 100%);
+  border-radius: 14px;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.95rem;
+  font-weight: 700;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
+}
+
+.processStep strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.processStep p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1200px) {
+  .header,
+  .footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .heroSection,
+  .introSection,
+  .processSection,
+  .caseHero,
+  .caseIntro,
+  .caseSolutionSection,
+  .caseSplitBand,
+  .caseStrategicSection,
+  .caseSummarySection,
+  .caseProcessSection,
+  .caseResultsSection,
+  .caseBandSection,
+  .caseProblemBand {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .introSection {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 640px);
+  }
+}
+
+@media (max-width: 920px) {
+  .casePageSpacious {
+    gap: 28px;
+  }
+
+  .casePageExtraSpacious {
+    gap: 40px;
+  }
+
+  .main {
+    padding: 0;
+  }
+
+  .header {
+    padding: 28px 20px 0;
+  }
+
+  .headerLight {
+    padding-bottom: 20px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .detailPage {
+    gap: 56px;
+    padding: 88px 0 0;
+  }
+
+  .heroSection,
+  .introSection,
+  .processSection,
+  .caseHero,
+  .caseIntro,
+  .caseSolutionSection,
+  .caseSplitBand,
+  .caseStrategicSection,
+  .caseSummarySection,
+  .caseProcessSection,
+  .caseResultsSection,
+  .caseBandSection,
+  .caseProblemBand {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .caseHero,
+  .caseIntro,
+  .caseSolutionSection,
+  .caseSplitBand,
+  .caseStrategicSection,
+  .caseSummarySection,
+  .caseProcessSection,
+  .caseResultsSection,
+  .caseBandSection,
+  .caseProblemBand {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .introSection,
+  .strategyBand,
+  .processGrid,
+  .micrositesResultsLayout,
+  .caseIntro,
+  .caseFeatureGrid,
+  .caseSplitBand,
+  .caseProcessGrid,
+  .caseTextCardGrid,
+  .caseTextCardGridSecondary,
+  .expectedImpactLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .caseMetricResultsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+  }
+
+  .resultsHero {
+    grid-template-columns: 1fr;
+  }
+
+  .resultsHighlightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .caseHeroTitleWide {
+    max-width: 16ch;
+    white-space: normal;
+  }
+
+  .introSection {
+    gap: 24px;
+  }
+
+  .caseIntro .caseHeroVisual {
+    order: -1;
+  }
+
+  .solutionSection,
+  .strategyBand,
+  .resultsSection,
+  .caseSplitBand,
+  .caseResultsSection,
+  .caseBandSection,
+  .caseProblemBand {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .solutionSection {
+    padding: 32px 20px 40px;
+  }
+
+  .solutionGrid {
+    gap: 48px;
+  }
+
+  .solutionCards {
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .micrositesResultsVisual {
+    padding: 22px 20px;
+  }
+
+  .strategyBand {
+    gap: 32px;
+    padding: 28px 20px;
+  }
+
+  .caseSolutionPanel {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+
+  .caseBandSectionSpacious {
+    padding: 48px 24px;
+  }
+
+  .expectedImpactLayout {
+    gap: 28px;
+  }
+
+  .expectedImpactVisual {
+    padding: 22px 20px;
+  }
+
+  .processVisual {
+    padding: 22px 20px;
+  }
+
+  .expectedImpactLayoutBalanced .processVisual {
+    order: 2;
+  }
+
+  .expectedImpactLayoutBalanced .expectedImpactCopy {
+    order: 1;
+  }
+
+  .processVisualHeader {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .caseStrategicSectionBalanced .caseTextCardGridSecondary {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 0;
+    max-width: none;
+  }
+
+  .caseStrategicSectionBalanced {
+    gap: 24px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 18px;
+    left: 0;
+    margin-left: 0;
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .casePageSpacious {
+    gap: 20px;
+  }
+
+  .casePageExtraSpacious {
+    gap: 28px;
+  }
+
+  .brandIcon {
+    height: 34px;
+  }
+
+  .heroSection {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .heroTitle,
+  .caseHeroTitle {
+    font-size: 2.2rem;
+  }
+
+  .caseHero {
+    padding-top: 32px;
+    padding-bottom: 24px;
+  }
+
+  .solutionCards,
+  .solutionCardsSingle {
+    grid-template-columns: 1fr;
+  }
+
+  .solutionMeta h3,
+  .caseHeading,
+  .caseSectionHeading {
+    font-size: 1.7rem;
+  }
+
+  .micrositesResultsVisual {
+    gap: 12px;
+    padding: 18px 16px;
+  }
+
+  .caseMetricResultsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .resultsVisual {
+    padding: 20px 18px;
+  }
+
+  .resultsVisualPrimary {
+    font-size: 2.35rem;
+  }
+
+  .caseStrategicSectionBalanced .caseTextCardGrid,
+  .caseStrategicSectionBalanced .caseTextCardGridSecondary {
+    gap: 20px;
+  }
+
+  .caseStrategicSectionBalanced {
+    gap: 20px;
+  }
+
+  .caseIntro,
+  .caseSolutionSection,
+  .caseSplitBand,
+  .caseStrategicSection,
+  .caseSummarySection,
+  .caseProcessSection,
+  .caseResultsSection,
+  .caseBandSection,
+  .caseProblemBand {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .caseBandSectionSpacious {
+    padding: 36px 20px;
+  }
+
+  .caseBandSectionSpacious {
+    padding: 44px 20px;
+  }
+
+  .expectedImpactCopy {
+    gap: 18px;
+  }
+
+  .expectedImpactVisualHeader {
+    gap: 8px;
+  }
+
+  .expectedImpactPill {
+    font-size: 0.78rem;
+    padding: 7px 11px;
+  }
+
+  .expectedImpactVisual {
+    gap: 20px;
+    padding: 18px 16px;
+  }
+
+  .processVisual {
+    gap: 18px;
+    padding: 18px 16px;
+  }
+
+  .processStep {
+    gap: 12px;
+    grid-template-columns: 42px minmax(0, 1fr);
+    padding: 14px;
+  }
+
+  .processStepIndex {
+    font-size: 0.82rem;
+    height: 34px;
+    width: 34px;
+  }
+
+  .caseMetricResult {
+    gap: 10px;
+  }
+
+  .caseMetricResult h3 {
+    font-size: 1rem;
+  }
+
+  .caseMetricBulletList {
+    font-size: 0.95rem;
+    padding-left: 18px;
+  }
+
+  .strategyList,
+  .bodyText,
+  .resultItem,
+  .caseBody,
+  .caseBulletList,
+  .caseResultsList,
+  .caseOrderedList,
+  .caseProcessCard ul {
+    font-size: 1rem;
+  }
+
+  .processCard h3,
+  .caseProcessCard h3 {
+    font-size: 1.25rem;
+  }
+
+}

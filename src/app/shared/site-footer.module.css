@@ -1,0 +1,43 @@
+.footer {
+  align-items: center;
+  background: linear-gradient(90deg, #8001fe 0%, #8e31ff 56%, #7f00ff 100%);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  left: 50%;
+  margin-left: -50vw;
+  margin-top: 72px;
+  padding: 20px 100px;
+  position: relative;
+  width: 100vw;
+}
+
+.logoLink {
+  display: inline-flex;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.logo {
+  display: block;
+  height: 56px;
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 920px) {
+  .footer {
+    left: 0;
+    margin-left: 0;
+    padding: 20px;
+    width: 100%;
+  }
+}
