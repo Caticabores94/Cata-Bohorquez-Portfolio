@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 406 404" fill="none">
+  <rect width="406" height="404" rx="16" fill="#04050d"/>
+  <rect x="1" y="1" width="404" height="402" rx="15" stroke="#8D8D93" stroke-opacity=".55" stroke-width="2"/>
+  <circle cx="203" cy="162" r="58" fill="url(#g1)"/>
+  <path d="M112 318c17-49 51-86 91-86s74 37 91 86" fill="url(#g2)"/>
+  <text x="203" y="360" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle">Catalina Bohórquez</text>
+  <defs>
+    <radialGradient id="g1" cx="0" cy="0" r="1" gradientTransform="translate(203 162) rotate(90) scale(58)">
+      <stop stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#4C1D95"/>
+    </radialGradient>
+    <linearGradient id="g2" x1="112" x2="294" y1="232" y2="318" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7E22CE"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+</svg>
