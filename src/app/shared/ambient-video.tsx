@@ -9,7 +9,7 @@ type AmbientVideoProps = {
 
 export default function AmbientVideo({ className, eager = false, poster, src }: AmbientVideoProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLElement | null>(null);
   const [isNearViewport, setIsNearViewport] = useState(eager);
   const [shouldRenderVideo, setShouldRenderVideo] = useState(true);
 
@@ -71,26 +71,40 @@ export default function AmbientVideo({ className, eager = false, poster, src }: 
     void startPlayback();
   }, [isNearViewport, shouldRenderVideo, src]);
 
-  return (
-    <div ref={containerRef} style={{ display: "contents" }}>
-      {shouldRenderVideo && isNearViewport ? (
-        <video
-          autoPlay
-          className={className}
-          loop
-          muted
-          playsInline
-          poster={poster}
-          preload={eager ? "metadata" : "none"}
-          ref={videoRef}
-        >
-          <source src={src} type="video/mp4" />
-        </video>
-      ) : poster ? (
-        <img alt="" aria-hidden="true" className={className} decoding="async" loading="eager" src={poster} />
-      ) : (
-        <div aria-hidden="true" className={className} />
-      )}
-    </div>
-  );
+  const attachContainerRef = (node: HTMLElement | null) => {
+    containerRef.current = node;
+  };
+
+  if (shouldRenderVideo && isNearViewport) {
+    return (
+      <video
+        autoPlay
+        className={className}
+        loop
+        muted
+        playsInline
+        poster={poster}
+        preload={eager ? "metadata" : "none"}
+        ref={videoRef}
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+    );
+  }
+
+  if (poster) {
+    return (
+      <img
+        alt=""
+        aria-hidden="true"
+        className={className}
+        decoding="async"
+        loading={eager ? "eager" : "lazy"}
+        ref={attachContainerRef}
+        src={poster}
+      />
+    );
+  }
+
+  return <div aria-hidden="true" className={className} ref={attachContainerRef} />;
 }
