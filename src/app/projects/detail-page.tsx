@@ -764,6 +764,23 @@ function renderAnalysis(detail: AnalysisProjectDetail) {
 
 function renderBuilder(detail: BuilderProjectDetail) {
   const isJapaneseLearningApp = detail.title === "Japanese learning app";
+  const builderResultHighlights = [
+    {
+      label: "Delivery Model",
+      value: "End-to-end product built by a single designer"
+    },
+    {
+      label: "Speed",
+      value: "~60-70% reduction in time to MVP"
+    },
+    {
+      label: "Workflow",
+      value: "Real-time iteration loop: Design -> prompt -> test -> refine"
+    }
+  ];
+  const builderSupportingResults = detail.results.filter(
+    (item) => !builderResultHighlights.some((highlight) => highlight.value === item)
+  );
 
   return (
     <section
@@ -933,32 +950,36 @@ function renderBuilder(detail: BuilderProjectDetail) {
       <section className={`${styles.caseResultsSection} ${styles.fadeUp} ${styles.fadeStep4}`}>
         {isJapaneseLearningApp ? (
           <>
-            <div className={styles.resultsHero}>
-              <div className={styles.resultsHeroCopy}>
-                <h2 className={styles.caseSectionHeading}>Results</h2>
+            <div className={styles.builderResultsLayout}>
+              <div className={styles.builderResultsLead}>
+                <span className={styles.builderResultsEyebrow}>Results</span>
+                <h2 className={styles.caseSectionHeading}>AI-assisted delivery proved materially faster.</h2>
                 <p className={styles.caseBody}>
-                  The project validated AI-assisted product development as a faster way to move from concept to MVP
-                  while keeping iteration and experimentation high.
+                  The project demonstrated that one designer, working with Codex as a build partner, could move from
+                  concept to functional MVP in days instead of weeks without sacrificing iteration quality.
                 </p>
+                <ol className={styles.builderResultsList}>
+                  {builderSupportingResults.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ol>
               </div>
-              <div aria-hidden="true" className={styles.resultsVisual}>
-                <span className={styles.resultsVisualKicker}>Key lift</span>
-                <div className={styles.resultsVisualPrimary}>60-70%</div>
-                <div className={styles.resultsVisualSecondary}>reduction in time to MVP</div>
-                <div className={styles.resultsVisualTags}>
-                  {detail.results.slice(0, 4).map((item) => (
-                    <span className={styles.resultsVisualTag} key={item}>
-                      {item}
-                    </span>
+              <div className={styles.builderResultsAside}>
+                <article className={styles.builderResultsMetricCard}>
+                  <span className={styles.builderResultsMetricLabel}>Time To MVP</span>
+                  <div className={styles.builderResultsMetricValue}>60-70%</div>
+                  <p className={styles.builderResultsMetricBody}>faster delivery compared with a typical 2-3 week workflow.</p>
+                </article>
+                <div className={styles.builderResultsProofGrid}>
+                  {builderResultHighlights.map((item) => (
+                    <article className={styles.builderResultsProofCard} key={item.label}>
+                      <span>{item.label}</span>
+                      <strong>{item.value}</strong>
+                    </article>
                   ))}
                 </div>
               </div>
             </div>
-            <ol className={styles.caseResultsList}>
-              {detail.results.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ol>
           </>
         ) : (
           <>
