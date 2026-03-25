@@ -8,7 +8,7 @@ import AmbientVideo from "./shared/ambient-video";
 import SiteFooter from "./shared/site-footer";
 import SiteHeader from "./shared/site-header";
 
-const aboutPhoto = publicAsset("/Catalina Bohórquez.png");
+const aboutPhoto = publicAsset("/Catalina-Bohorquez.png");
 const experienceJnj = publicAsset("/Assets/Johnson & Johnson.png");
 const experienceAlestra = publicAsset("/Assets/Alestra.png");
 const experienceVip = publicAsset("/Assets/VIP Medical Group.png");

@@ -7,7 +7,7 @@ import AmbientVideo from "../shared/ambient-video";
 import SiteFooter from "../shared/site-footer";
 import SiteHeader from "../shared/site-header";
 
-const contactPhoto = publicAsset("/Catalina Bohórquez.png");
+const contactPhoto = publicAsset("/Catalina-Bohorquez.png");
 const contactVideo = publicAsset("/Contact%20video.mp4");
 const phoneIcon = publicAsset("/contact-phone.svg");
 const mailIcon = publicAsset("/contact-mail.svg");

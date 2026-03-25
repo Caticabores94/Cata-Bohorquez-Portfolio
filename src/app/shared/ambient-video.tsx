@@ -6,15 +6,8 @@ type AmbientVideoProps = {
   src: string;
 };
 
-type SaveDataNavigator = Navigator & {
-  connection?: {
-    saveData?: boolean;
-  };
-};
-
 export default function AmbientVideo({ className, poster, src }: AmbientVideoProps) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [shouldLoad, setShouldLoad] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [shouldRenderVideo, setShouldRenderVideo] = useState(true);
 
   useEffect(() => {
@@ -23,39 +16,33 @@ export default function AmbientVideo({ className, poster, src }: AmbientVideoPro
     }
 
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const connection = (navigator as SaveDataNavigator).connection;
-    const hasSaveData = connection?.saveData ?? false;
-    const isSmallViewport = window.innerWidth < 768;
 
-    if (mediaQuery.matches || hasSaveData || isSmallViewport) {
+    if (mediaQuery.matches) {
       setShouldRenderVideo(false);
-      return;
-    }
-
-    const node = containerRef.current;
-    if (!node) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "240px 0px" }
-    );
-
-    observer.observe(node);
-
-    return () => {
-      observer.disconnect();
     };
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldRenderVideo) {
+      return;
+    }
+
+    video.load();
+
+    const startPlayback = async () => {
+      try {
+        await video.play();
+      } catch {
+        // Keep the video visible even if autoplay is blocked by the environment.
+      }
+    };
+
+    void startPlayback();
+  }, [shouldRenderVideo, src]);
+
   return (
-    <div ref={containerRef} style={{ display: "contents" }}>
+    <div style={{ display: "contents" }}>
       {shouldRenderVideo ? (
         <video
           autoPlay
@@ -64,9 +51,10 @@ export default function AmbientVideo({ className, poster, src }: AmbientVideoPro
           muted
           playsInline
           poster={poster}
-          preload="none"
+          preload="metadata"
+          ref={videoRef}
         >
-          {shouldLoad ? <source src={src} type="video/mp4" /> : null}
+          <source src={src} type="video/mp4" />
         </video>
       ) : poster ? (
         <img alt="" aria-hidden="true" className={className} decoding="async" loading="eager" src={poster} />

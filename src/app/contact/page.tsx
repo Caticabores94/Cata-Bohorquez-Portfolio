@@ -7,7 +7,7 @@ import { CALENDLY_URL } from "../../lib/site-config";
 import SiteFooter from "../shared/site-footer";
 import SiteHeader from "../shared/site-header";
 
-const contactPhoto = publicAsset("/Catalina Bohórquez.png");
+const contactPhoto = publicAsset("/Catalina-Bohorquez.png");
 const phoneIcon = publicAsset("/contact-phone.svg");
 const mailIcon = publicAsset("/contact-mail.svg");
 const linkedinIcon = publicAsset("/contact-linkedin.svg");
