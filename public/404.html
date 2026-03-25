@@ -8,7 +8,7 @@
         var path = window.location.pathname.replace(/^\/Cata-Bohorquez-Portfolio/, "");
         var search = window.location.search || "";
         var hash = window.location.hash || "";
-        var redirect = "/Cata-Bohorquez-Portfolio/?p=" + encodeURIComponent(path + search + hash);
+        var redirect = "/Cata-Bohorquez-Portfolio/#" + path + search + hash;
         window.location.replace(redirect);
       })();
     </script>
