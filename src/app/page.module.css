@@ -201,7 +201,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: clamp(104px, 16svh, 146px) auto 0;
+  margin: clamp(40px, 7svh, 72px) auto 0;
   max-width: 1512px;
   min-height: clamp(360px, 58svh, 520px);
   padding: 0 clamp(28px, 10vw, 150px);
@@ -1376,7 +1376,7 @@
   }
 
   .heroContent {
-    margin-top: clamp(100px, 15svh, 128px);
+    margin-top: clamp(40px, 6svh, 64px);
     padding-left: clamp(32px, 7vw, 96px);
     padding-right: clamp(32px, 7vw, 96px);
   }
@@ -1413,7 +1413,7 @@
   }
 
   .heroContent {
-    margin-top: clamp(92px, 13svh, 104px);
+    margin-top: clamp(32px, 5svh, 48px);
     min-height: clamp(320px, 52svh, 430px);
     padding-left: 40px;
     padding-right: 40px;
@@ -1571,7 +1571,7 @@
   }
 
   .heroContent {
-    margin-top: clamp(76px, 11svh, 88px);
+    margin-top: clamp(24px, 4svh, 36px);
     min-height: clamp(300px, 48svh, 390px);
     padding: 0 20px;
   }
