@@ -91,12 +91,15 @@
 }
 
 .hero {
+  --hero-header-overlap: 120px;
   align-items: center;
   display: flex;
   flex-direction: column;
   left: 50%;
-  min-height: clamp(680px, 100svh, 903px);
+  margin-top: calc(var(--hero-header-overlap) * -1);
+  min-height: calc(clamp(680px, 100svh, 903px) + var(--hero-header-overlap));
   overflow: hidden;
+  padding-top: var(--hero-header-overlap);
   position: relative;
   transform: translateX(-50%);
   width: 100vw;
@@ -1400,6 +1403,7 @@
   }
 
   .hero {
+    --hero-header-overlap: 96px;
     left: 0;
     min-height: clamp(640px, 100svh, 760px);
     transform: none;
@@ -1561,6 +1565,10 @@
 }
 
 @media (max-width: 640px) {
+  .hero {
+    --hero-header-overlap: 84px;
+  }
+
   .brandIcon {
     height: 34px;
   }
