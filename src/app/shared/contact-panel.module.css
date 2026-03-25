@@ -84,10 +84,11 @@
 }
 
 .card {
-  align-items: flex-start;
+  align-items: center;
   display: grid;
   gap: 40px;
   grid-template-columns: 203px 619px;
+  justify-content: center;
   max-width: 862px;
   position: relative;
   width: 100%;
@@ -98,6 +99,7 @@
   border: 1px solid rgba(183, 183, 183, 0.9);
   border-radius: 8px;
   height: 202px;
+  justify-self: center;
   overflow: hidden;
   width: 203px;
 }
@@ -113,6 +115,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  justify-content: center;
   width: 619px;
 }
 
@@ -192,6 +195,7 @@
   }
 
   .card {
+    justify-items: center;
     gap: 28px;
     grid-template-columns: 1fr;
   }
@@ -203,11 +207,13 @@
   }
 
   .info {
+    align-items: center;
     width: 100%;
   }
 
   .info h3 {
     font-size: 2.5rem;
+    text-align: center;
     white-space: normal;
   }
 
@@ -218,6 +224,7 @@
   .linksMobile {
     display: grid;
     gap: 12px;
+    width: 100%;
   }
 
   .linksMobile a {
