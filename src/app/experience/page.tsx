@@ -11,7 +11,7 @@ const experienceHeroImage = publicAsset("/Assets/Experience image.png");
 const logoJnj = publicAsset("/logos/Johnson & Johnson Logo color.png");
 const logoAlestra = publicAsset("/logos/Alestra logo color.png");
 const logoVip = publicAsset("/logos/vip.png");
-const logoCamera = publicAsset("/Experience images/Cámara de comercio.png");
+const logoCamera = publicAsset("/Experience images/Camara-de-comercio.png");
 
 const featuredExperiences = experienceSummaries.slice(0, 3).map((item) => {
   if (item.slug === "johnson-and-johnson") {
