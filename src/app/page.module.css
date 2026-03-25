@@ -93,11 +93,12 @@
 .hero {
   --hero-header-overlap: 120px;
   align-items: center;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   left: 50%;
   margin-top: calc(var(--hero-header-overlap) * -1);
-  min-height: calc(clamp(680px, 100svh, 903px) + var(--hero-header-overlap));
+  min-height: clamp(680px, 100svh, 903px);
   overflow: hidden;
   padding-top: var(--hero-header-overlap);
   position: relative;
