@@ -4,5 +4,8 @@ import { GITHUB_PAGES_REPO } from "./src/lib/site-config";
 
 export default defineConfig(({ mode }) => ({
   base: mode === "github-pages" ? `/${GITHUB_PAGES_REPO}/` : "/",
+  build: {
+    assetsDir: "Assets"
+  },
   plugins: [react()],
 }));
