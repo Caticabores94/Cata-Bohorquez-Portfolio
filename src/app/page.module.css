@@ -1417,9 +1417,12 @@
   }
 
   .heroContent {
-    margin-top: clamp(32px, 5svh, 48px);
+    flex: 1 1 auto;
+    margin-top: 0;
     min-height: clamp(320px, 52svh, 430px);
     padding-left: 40px;
+    padding-top: clamp(32px, 5svh, 48px);
+    padding-bottom: clamp(40px, 7svh, 56px);
     padding-right: 40px;
   }
 
@@ -1579,9 +1582,10 @@
   }
 
   .heroContent {
-    margin-top: clamp(24px, 4svh, 36px);
+    flex: 1 1 auto;
+    margin-top: 0;
     min-height: clamp(300px, 48svh, 390px);
-    padding: 0 20px;
+    padding: clamp(24px, 4svh, 32px) 20px clamp(32px, 6svh, 44px);
   }
 
   .heroBody,
