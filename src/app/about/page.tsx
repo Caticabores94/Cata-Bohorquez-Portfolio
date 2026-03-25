@@ -31,13 +31,13 @@ const languages = [
 ] as const;
 
 const miscLeft = [
-  "No kids and I don’t want to have any",
-  "I love animals but I don’t have any at home :(",
-  "My mom is my hero (She’s 3 times cancer survivor)",
-  "I’m the youngest of 3 siblings",
-  "Just married <3",
-  "You’ll never see me starting a fight",
-  "Reaffirmation words is my fav love language"
+  "I don’t have kids and don’t plan to",
+  "I love animals, even though I don’t have any at home right now",
+  "My mom is my hero. She is a three-time cancer survivor",
+  "I’m the youngest of three siblings",
+  "Recently married",
+  "You’ll rarely see me start a fight",
+  "Words of affirmation are my favorite love language"
 ] as const;
 
 const miscRight = [
@@ -45,8 +45,8 @@ const miscRight = [
   "I love creative workshops",
   "Sun: Libra | Rising: Leo | Moon: Aries",
   "I cry a lot watching movies",
-  "You’ll always see me with a book in my hands",
-  "If you need some motivational words, I’m your person"
+  "You’ll usually see me with a book in my hands",
+  "If you need encouragement, I’m your person"
 ] as const;
 
 export default function AboutPage() {
@@ -65,12 +65,10 @@ export default function AboutPage() {
               <div className={styles.copyBlock}>
                 <h1 className={styles.sectionTitle}>Getting to know Cata</h1>
                 <p className={styles.bodyText}>
-                  Even if I studied advertising and most people think that&apos;s mostly
-                  related to create a nice TV commercial, what made me fall in love with
-                  my career was the investigative and strategic side of it, so I have
-                  based all the time I had to study on improving my skills understanding
-                  consumer behavior, their needs, and how to solve them with the brands
-                  I have worked with.
+                  Even though I studied advertising, what made me fall in love with the
+                  field was its investigative and strategic side. That curiosity shaped
+                  how I learned to understand people, uncover their needs, and design
+                  solutions that create value for both users and the brands I work with.
                 </p>
               </div>
               <div className={styles.imageFrame}>
@@ -127,22 +125,22 @@ export default function AboutPage() {
                 />
               </div>
               <div className={styles.copyBlock}>
-                <h2 className={styles.sectionTitle}>What about Cata outside the work environment?</h2>
+                <h2 className={styles.sectionTitle}>Who is Cata outside of work?</h2>
                 <p className={styles.bodyText}>
-                  My husband is my bestie. I really love to read and having a good
-                  adventure, either with my head inside a good book or in the real world.
-                  I like to say I&apos;m like Bilbo Baggings: Hobbit by nature but traveler
-                  by heart.
+                  My husband is my best friend. I love reading and I love a good
+                  adventure, whether that means getting lost in a book or heading into
+                  the real world. I usually describe myself as a hobbit by nature and a
+                  traveler at heart.
                 </p>
                 <p className={styles.bodyText}>
                   If you enjoy watching anime, Harry Potter, Lord of the Rings, Disney
-                  movies or anything geek we could be friends.
+                  movies, or anything geeky, we would probably get along.
                 </p>
               </div>
             </div>
 
             <section className={`${styles.sectionBlock} ${styles.fadeUp} ${styles.fadeStep5}`}>
-              <h2 className={styles.sectionTitle}>Miscellaneous</h2>
+              <h2 className={styles.sectionTitle}>A few more things about me</h2>
               <div className={styles.miscGrid}>
                 <ul className={styles.miscList}>
                   {miscLeft.map((item) => (

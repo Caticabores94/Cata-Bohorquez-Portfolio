@@ -7,7 +7,7 @@
   left: 50%;
   margin-left: -50vw;
   margin-top: 72px;
-  padding: 20px 100px;
+  padding: 20px var(--content-gutter);
   position: relative;
   width: 100vw;
 }
@@ -26,18 +26,11 @@
   width: auto;
 }
 
-@media (max-width: 1200px) {
-  .footer {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-
 @media (max-width: 920px) {
   .footer {
     left: 0;
     margin-left: 0;
-    padding: 20px;
+    padding: 20px var(--shell-padding);
     width: 100%;
   }
 }

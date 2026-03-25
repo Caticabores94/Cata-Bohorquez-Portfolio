@@ -15,7 +15,7 @@
 .main {
   margin: 0 auto;
   max-width: 1662px;
-  padding: 0 75px;
+  padding: 0 var(--shell-padding);
 }
 
 .frame {
@@ -433,7 +433,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 150px;
+  gap: 132px;
   padding: 148px 0 80px;
 }
 
@@ -445,7 +445,7 @@
     "media title"
     "media copy";
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  padding: 0 100px;
+  padding: 0 var(--content-gutter);
 }
 
 .aboutTitle {
@@ -746,7 +746,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 0 100px;
+  padding: 0 var(--content-gutter);
   width: 100%;
 }
 
@@ -821,6 +821,15 @@
     border-color 180ms ease,
     transform 180ms ease,
     box-shadow 180ms ease;
+}
+
+.experienceCardLink {
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  outline: none;
+  position: relative;
 }
 
 .projectVisual {
@@ -986,14 +995,14 @@
   transition: color 180ms ease;
 }
 
-.experienceCard:hover,
-.experienceCard:focus-visible {
+.experienceCardLink:hover,
+.experienceCardLink:focus-visible {
   border-color: #353535;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
-.experienceCard:hover .cardGlowTopLeft,
-.experienceCard:focus-visible .cardGlowTopLeft {
+.experienceCardLink:hover .cardGlowTopLeft,
+.experienceCardLink:focus-visible .cardGlowTopLeft {
   background: radial-gradient(circle, rgba(128, 0, 255, 0.62), transparent 72%);
   height: 216px;
   left: -106px;
@@ -1001,30 +1010,30 @@
   width: 329px;
 }
 
-.experienceCard:hover .cardGlowBottom,
-.experienceCard:focus-visible .cardGlowBottom {
+.experienceCardLink:hover .cardGlowBottom,
+.experienceCardLink:focus-visible .cardGlowBottom {
   background: radial-gradient(circle, rgba(128, 0, 255, 0.62), transparent 72%);
   left: 115px;
   top: 145px;
 }
 
-.experienceCard:hover .cardImage,
-.experienceCard:focus-visible .cardImage {
+.experienceCardLink:hover .cardImage,
+.experienceCardLink:focus-visible .cardImage {
   filter: saturate(1.04);
   transform: var(--card-image-rest-transform, translate3d(0, 0, 0) scale(1));
 }
 
-.experienceCard:hover .cardImageOverlay,
-.experienceCard:focus-visible .cardImageOverlay {
+.experienceCardLink:hover .cardImageOverlay,
+.experienceCardLink:focus-visible .cardImageOverlay {
   background:
     linear-gradient(-43.7796deg, rgba(0, 0, 0, 0.26) 56%, rgba(128, 0, 255, 0.34) 100%),
     linear-gradient(180deg, rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0.46) 46%, rgba(0, 0, 0, 0.86) 72%, #000000 100%);
 }
 
-.experienceCard:hover .cardCopy p,
-.experienceCard:hover .cardYear,
-.experienceCard:focus-visible .cardCopy p,
-.experienceCard:focus-visible .cardYear {
+.experienceCardLink:hover .cardCopy p,
+.experienceCardLink:hover .cardYear,
+.experienceCardLink:focus-visible .cardCopy p,
+.experienceCardLink:focus-visible .cardYear {
   color: #ffffff;
 }
 
@@ -1033,10 +1042,17 @@
   min-width: 0;
 }
 
-.projectCard:hover .projectCopy h3,
-.projectCard:hover .projectCopy p,
-.projectCard:focus-visible .projectCopy h3,
-.projectCard:focus-visible .projectCopy p {
+.projectCardLink {
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.projectCardLink:hover .projectCopy h3,
+.projectCardLink:hover .projectCopy p,
+.projectCardLink:focus-visible .projectCopy h3,
+.projectCardLink:focus-visible .projectCopy p {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -1323,20 +1339,13 @@
 
 @media (max-width: 1200px) {
   .main {
-    padding: 0 32px;
+    padding: 0 var(--shell-padding);
   }
 
   .header,
   .sectionBlock,
   .about,
   .footer {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  .contactSection {
-    margin-left: 40px;
-    margin-right: 40px;
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -1450,11 +1459,6 @@
     padding-right: 20px;
   }
 
-  .contactCard {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
   .about {
     box-sizing: border-box;
     grid-template-columns: 1fr;
@@ -1510,8 +1514,7 @@
     font-size: 1.5rem;
   }
 
-  .aboutCopy,
-  .contactInfo {
+  .aboutCopy {
     text-align: center;
   }
 
@@ -1533,9 +1536,7 @@
   }
 
   .sectionHeader,
-  .sectionTitle,
-  .contactHeader,
-  .contactTitle {
+  .sectionTitle {
     text-align: center;
   }
 
@@ -1546,32 +1547,6 @@
   .projectGrid {
     gap: 24px;
     grid-template-columns: 1fr;
-  }
-
-  .contactSection {
-    margin: 0 20px;
-    max-width: none;
-    padding: 44px 20px 36px;
-    width: calc(100% - 40px);
-  }
-
-  .contactCard {
-    grid-template-columns: 203px minmax(0, 1fr);
-    max-width: 100%;
-  }
-
-  .contactInfo {
-    text-align: left;
-    width: 100%;
-  }
-
-  .contactInfo h3 {
-    font-size: clamp(2.4rem, 4vw, 3.75rem);
-    white-space: normal;
-  }
-
-  .contactLinks {
-    width: 100%;
   }
 
   .footer {
@@ -1637,70 +1612,6 @@
 
   .heroVideo {
     object-position: center;
-  }
-
-  .contactCard {
-    gap: 20px;
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .contactInfo,
-  .contactDetails {
-    align-items: center;
-    text-align: center;
-  }
-
-  .contactInfo {
-    gap: 12px;
-  }
-
-  .contactLinks {
-    gap: 10px;
-  }
-
-  .contactLinks a {
-    font-size: 1rem;
-  }
-
-  .contactDetails {
-    display: none;
-  }
-
-  .contactLinksMobile {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    min-width: 0;
-    width: 100%;
-  }
-
-  .contactLinksMobile a {
-    align-items: flex-start;
-    color: #ffffff;
-    display: flex;
-    gap: 4px;
-    min-width: 0;
-    padding: 0 24px;
-    text-decoration: none;
-    width: 100%;
-  }
-
-  .contactLinksMobile img {
-    flex: 0 0 auto;
-    height: 21px;
-    width: 21px;
-  }
-
-  .contactLinksMobile span {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.3125;
-    overflow-wrap: anywhere;
-    text-align: left;
-    width: 100%;
   }
 
   .cardGrid {

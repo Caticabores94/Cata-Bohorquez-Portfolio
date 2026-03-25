@@ -2,47 +2,23 @@ import { Link } from "react-router-dom";
 import styles from "./page.module.css";
 import { publicAsset } from "../../lib/public-asset";
 import { useDocumentTitle } from "../../lib/use-document-title";
-import { getExternalLinkProps } from "../../lib/link-utils";
-import AmbientVideo from "../shared/ambient-video";
+import ContactPanel from "../shared/contact-panel";
 import SiteFooter from "../shared/site-footer";
 import SiteHeader from "../shared/site-header";
 
-const contactPhoto = publicAsset("/Catalina-Bohorquez.png");
 const contactVideo = publicAsset("/Contact%20video.mp4");
-const phoneIcon = publicAsset("/contact-phone.svg");
-const mailIcon = publicAsset("/contact-mail.svg");
-const linkedinIcon = publicAsset("/contact-linkedin.svg");
 
 const cardAcuvue = publicAsset("/Projects/Rectangle%205.png");
 const cardGeoAcuvue = publicAsset("/Projects/Rectangle%205-1.png");
 const cardJapanese = publicAsset("/Projects/Rectangle%205-2.png");
 const cardGeoJjv = publicAsset("/Projects/Group%205.png");
+const cardCv4u = publicAsset("/Projects/Clear%20Vision%20For%20You/Projects/Rectangle%205.png");
 const cardPortal = publicAsset("/Projects/Rectangle%205-3.png");
 const cardVein = publicAsset("/Projects/Rectangle%205-4.png");
 const cardPts = publicAsset("/Projects/Rectangle%205-5.png");
 const cardVeinWomen = publicAsset("/Projects/Group%205-1.png");
 const cardInsurance = publicAsset("/Projects/Rectangle%205-6.png");
 const cardCostCalculator = publicAsset("/Projects/Group%205-3.png");
-const cv4uLogo = publicAsset("/logos/Clear Vision For You/CV4U Logo.png");
-
-const contactItems = [
-  {
-    href: "tel:+573235729981",
-    label: "+57 (323) 572 - 9981",
-    icon: phoneIcon
-  },
-  {
-    href: "mailto:Catalina.bohorquez94@gmail.com",
-    label: "Catalina.bohorquez94@gmail.com",
-    icon: mailIcon
-  },
-  {
-    href: "https://www.linkedin.com/in/catalina-boh%C3%B3rquez-restrepo/?locale=en_US",
-    label: "Catalina Bohórquez Restrepo",
-    icon: linkedinIcon
-  }
-] as const;
-
 type ProjectCardItem = {
   slug?: string;
   title: string;
@@ -86,15 +62,15 @@ const projectCards: readonly ProjectCardItem[] = [
     title: "GEO optimization for JJV Pro",
     role: "Product Designer | GEO co-creator",
     media: cardGeoJjv,
-    mediaClassName: styles.mediaGeoJjv,
+    mediaClassName: styles.mediaCardFill,
     cardClassName: styles.surfaceLight
   },
   {
     slug: "clear-vision-for-you",
     title: "CV4U (Global Project)",
     role: "Product Designer",
-    logo: cv4uLogo,
-    logoClassName: styles.cv4uLogo,
+    media: cardCv4u,
+    mediaClassName: styles.mediaCardFill,
     cardClassName: styles.surfaceCv4u
   },
   {
@@ -199,9 +175,9 @@ export default function ProjectsPage() {
             <section className={`${styles.heroSection} ${styles.fadeUp} ${styles.fadeStep1}`} data-node-id="11:1102">
               <h1 className={styles.heroTitle}>Ready to see how ideas turn into impact?</h1>
               <p className={styles.heroBody}>
-                Here you&apos;ll find a selection of projects that showcase how I approach
-                design, from ideation to execution, focusing on creating meaningful,
-                scalable, and user-centered solutions.
+                Here you&apos;ll find a selection of projects that show how I approach
+                design from strategy to execution, always aiming for clear, scalable,
+                and user-centered outcomes.
               </p>
             </section>
 
@@ -219,66 +195,18 @@ export default function ProjectsPage() {
 
             <section className={`${styles.noteSection} ${styles.fadeUp} ${styles.fadeStep3}`}>
               <p className={styles.noteText}>
-                If you want to know more about the projects or want to see something
-                else, just let me know :)
+                If you&apos;d like to review a specific case study or see additional work,
+                reach out and I can walk you through it.
               </p>
             </section>
 
-            <section className={`${styles.contactSection} ${styles.fadeUp} ${styles.fadeStep4}`}>
-              <div className={styles.contactBackdrop} aria-hidden="true">
-                <AmbientVideo className={styles.contactVideo} src={contactVideo} />
-                <div className={styles.contactBackdropShade} />
-              </div>
-
-              <div className={styles.contactHeader}>
-                <h2 className={styles.contactTitle}>Ready to get started?</h2>
-                <p className={styles.contactBody}>
-                  If you&apos;re interested in working with me just throw me a message and
-                  I&apos;ll be more than happy to check how I can join your team!
-                </p>
-                <span aria-hidden="true" className={styles.contactDivider} />
-              </div>
-
-              <div className={styles.contactCard}>
-                <div className={styles.contactPhoto}>
-                  <img alt="Catalina Bohórquez" src={contactPhoto} />
-                </div>
-
-                <div className={styles.contactInfo}>
-                  <h3>Catalina Bohórquez R</h3>
-                  <div className={styles.contactDetails}>
-                    <div className={styles.contactIcons} aria-hidden="true">
-                      {contactItems.map((item) => (
-                        <img alt="" key={item.label} src={item.icon} />
-                      ))}
-                    </div>
-                    <div className={styles.contactLinks}>
-                      {contactItems.map((item) => (
-                        <a
-                          href={item.href}
-                          key={item.label}
-                          {...getExternalLinkProps(item.href)}
-                        >
-                          {item.label}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                  <div className={styles.contactLinksMobile}>
-                    {contactItems.map((item) => (
-                      <a
-                        href={item.href}
-                        key={item.label}
-                        {...getExternalLinkProps(item.href)}
-                      >
-                        <img alt="" aria-hidden="true" src={item.icon} />
-                        <span>{item.label}</span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
+            <div className={`${styles.fadeUp} ${styles.fadeStep4}`}>
+              <ContactPanel
+                backgroundVideoSrc={contactVideo}
+                body="If you're interested in working with me, send me a message and I'll be happy to explore how I can support your team."
+                title="Ready to get started?"
+              />
+            </div>
           </section>
 
           <SiteFooter />

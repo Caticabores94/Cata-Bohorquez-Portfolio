@@ -135,7 +135,7 @@ export default function ExperiencePage() {
 
             <section className={`${styles.heroSection} ${styles.fadeUp} ${styles.fadeStep1}`}>
               <div className={styles.heroCopy}>
-                <h1 className={styles.sectionTitle}>Who Is Cata as professional?</h1>
+                <h1 className={styles.sectionTitle}>Who is Cata as a professional?</h1>
                 <div className={styles.bodyText}>
                   <p>
                     Product Designer with 8+ years of experience blending UX research, UI
@@ -165,8 +165,8 @@ export default function ExperiencePage() {
             <section className={`${styles.sectionBlock} ${styles.fadeUp} ${styles.fadeStep2}`}>
               <h2 className={styles.sectionTitle}>Professional Experience</h2>
               <p className={styles.sectionDescription}>
-                Click on any of the cards if you want to expand the information about that
-                specific experience.
+                Open any card below to explore the scope, process, and outcomes behind
+                each experience.
               </p>
               <div className={styles.featuredGrid}>
                 {featuredExperiences.map((item) => (
@@ -183,10 +183,10 @@ export default function ExperiencePage() {
             <section className={`${styles.reviewsSection} ${styles.fadeUp} ${styles.fadeStep3}`}>
               <h2 className={styles.sectionTitle}>Cata&apos;s Reviews</h2>
               <p className={styles.sectionDescription}>
-                If you&apos;re curious about what it is to work with me, here you go! These
-                are some comments from old teammates, leaders and co-workers.
+                If you&apos;re curious about what it&apos;s like to work with me, here are a
+                few reflections from former teammates, leaders, and collaborators.
               </p>
-              <p className={styles.reviewsNote}>(You can check all of these on LinkedIn too)</p>
+              <p className={styles.reviewsNote}>(You can find the full recommendations on LinkedIn as well.)</p>
               <ReviewsCarousel reviews={reviews} />
             </section>
           </section>

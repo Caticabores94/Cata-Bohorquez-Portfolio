@@ -3,7 +3,7 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 40px 75px 0;
+  padding: 40px var(--shell-padding) 0;
   position: relative;
   width: 100%;
   z-index: 30;
@@ -52,11 +52,11 @@
   border-radius: 999px;
   color: #ffffff;
   display: inline-flex;
-  font-size: 0.703rem;
+  font-size: 0.9rem;
   font-weight: 700;
   justify-content: center;
-  min-height: 26px;
-  padding: 6px 45px;
+  min-height: 38px;
+  padding: 0 20px;
   transition:
     background-color 160ms ease,
     border-color 160ms ease,
@@ -72,16 +72,9 @@
   transform: scale(0.98);
 }
 
-@media (max-width: 1200px) {
-  .header {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-
 @media (max-width: 920px) {
   .header {
-    padding: 28px 20px 0;
+    padding: 28px var(--shell-padding) 0;
   }
 
   .headerSolid {

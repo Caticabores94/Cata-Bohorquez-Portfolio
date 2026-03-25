@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import styles from "./page.module.css";
 import { publicAsset } from "../lib/public-asset";
 import { useDocumentTitle } from "../lib/use-document-title";
-import { getExternalLinkProps } from "../lib/link-utils";
 import { CALENDLY_URL } from "../lib/site-config";
 import AmbientVideo from "./shared/ambient-video";
+import ContactPanel from "./shared/contact-panel";
 import SiteFooter from "./shared/site-footer";
 import SiteHeader from "./shared/site-header";
 
-const aboutPhoto = publicAsset("/Catalina-Bohorquez.png");
 const experienceJnj = publicAsset("/Assets/Johnson & Johnson.png");
 const experienceAlestra = publicAsset("/Assets/Alestra.png");
 const experienceVip = publicAsset("/Assets/VIP Medical Group.png");
@@ -18,9 +17,6 @@ const logoAcuvue = publicAsset("/logos/Acuvue.png");
 const logoJnj = publicAsset("/logos/Johnson & Johnson Logo Horisontal.png");
 const logoAlestra = publicAsset("/logos/Alestra.png");
 const logoPainTreatment = publicAsset("/logos/PTS.png");
-const phoneIcon = publicAsset("/contact-phone.svg");
-const mailIcon = publicAsset("/contact-mail.svg");
-const linkedinIcon = publicAsset("/contact-linkedin.svg");
 const heroVideo = publicAsset("/home-hero-540.mp4");
 const heroPoster = publicAsset("/home-hero-540.mp4.png");
 const projectAcuvueVideo = publicAsset("/ACUVUE%20LOGO%20ANIMATED.mp4");
@@ -30,6 +26,7 @@ const contactVideo = publicAsset("/Contact%20video.mp4");
 
 const experienceItems = [
   {
+    slug: "johnson-and-johnson",
     image: experienceJnj,
     imageClassName: styles.cardImageJnj,
     overlayClassName: styles.cardImageOverlayTint,
@@ -38,6 +35,7 @@ const experienceItems = [
     years: "2023 - Current"
   },
   {
+    slug: "alestra-movil",
     image: experienceAlestra,
     imageClassName: styles.cardImageAlestra,
     title: "Alestra",
@@ -45,6 +43,7 @@ const experienceItems = [
     years: "2025"
   },
   {
+    slug: "vip-medical-group",
     image: experienceVip,
     imageClassName: styles.cardImageVip,
     overlayClassName: styles.cardImageOverlayTint,
@@ -55,6 +54,7 @@ const experienceItems = [
 ] as const;
 
 type ProjectItem = {
+  slug: string;
   title: string;
   role: string;
   media: string;
@@ -67,12 +67,14 @@ type ProjectItem = {
 
 const projectItems: readonly ProjectItem[] = [
   {
+    slug: "acuvue-contact-lenses",
     title: "ACUVUE (Global Project)",
     role: "Senior UI|UX designer",
     media: projectAcuvueVideo,
     mediaType: "video"
   },
   {
+    slug: "geo-optimization-acuvue",
     title: "GEO optimization for ACUVUE",
     role: "Product Designer | GEO co-creator",
     media: projectAcuvueGeoVideo,
@@ -82,29 +84,12 @@ const projectItems: readonly ProjectItem[] = [
     overlayLogoClassName: styles.projectGeoLogo
   },
   {
+    slug: "japanese-learning-app",
     title: "Japanese Learning App (Full AI project)",
     role: "Senior UI|UX designer | Vibe Coder",
     media: projectJapanVideo,
     mediaType: "video",
     borderClassName: styles.projectCardMutedBorder
-  }
-] as const;
-
-const contactItems = [
-  {
-    href: "tel:+573235729981",
-    label: "+57 (323) 572 - 9981",
-    icon: phoneIcon
-  },
-  {
-    href: "mailto:Catalina.bohorquez94@gmail.com",
-    label: "Catalina.bohorquez94@gmail.com",
-    icon: mailIcon
-  },
-  {
-    href: "https://www.linkedin.com/in/catalina-boh%C3%B3rquez-restrepo/?locale=en_US",
-    label: "Catalina Bohórquez Restrepo",
-    icon: linkedinIcon
   }
 ] as const;
 
@@ -307,27 +292,29 @@ function Experience() {
       <div className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>Experience</h2>
         <p className={styles.sectionDescription}>
-          Click on any card to expand the experience information. Or click on
-          &ldquo;See more&rdquo; to check all the experience collection.
+          Open any featured case to review the work in more detail, or use
+          &ldquo;See more&rdquo; to browse the full experience archive.
         </p>
       </div>
       <div className={styles.cardGrid}>
         {experienceItems.map((item) => (
-          <article className={styles.experienceCard} key={item.title} tabIndex={0}>
-            <div aria-hidden="true" className={styles.cardGlowTopLeft} />
-            <div aria-hidden="true" className={styles.cardGlowBottom} />
-            <div className={styles.experienceMedia}>
-              <img alt="" className={`${styles.cardImage} ${item.imageClassName}`} src={item.image} />
-              <div
-                aria-hidden="true"
-                className={`${styles.cardImageOverlay} ${item.overlayClassName ?? ""}`}
-              />
-            </div>
-            <div className={styles.cardCopy}>
-              <h3>{item.title}</h3>
-              <p>{item.role}</p>
-              <p className={styles.cardYear}>{item.years}</p>
-            </div>
+          <article className={styles.experienceCard} key={item.title}>
+            <Link className={styles.experienceCardLink} to={`/experience/${item.slug}`}>
+              <div aria-hidden="true" className={styles.cardGlowTopLeft} />
+              <div aria-hidden="true" className={styles.cardGlowBottom} />
+              <div className={styles.experienceMedia}>
+                <img alt="" className={`${styles.cardImage} ${item.imageClassName}`} src={item.image} />
+                <div
+                  aria-hidden="true"
+                  className={`${styles.cardImageOverlay} ${item.overlayClassName ?? ""}`}
+                />
+              </div>
+              <div className={styles.cardCopy}>
+                <h3>{item.title}</h3>
+                <p>{item.role}</p>
+                <p className={styles.cardYear}>{item.years}</p>
+              </div>
+            </Link>
           </article>
         ))}
       </div>
@@ -344,41 +331,43 @@ function Projects() {
       <div className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>Projects</h2>
         <p className={styles.sectionDescription}>
-          Click on any card to expand the projects information. Or click on
-          &ldquo;See more&rdquo; to check all the projects collection.
+          Open any featured project to review the case study, or use
+          &ldquo;See more&rdquo; to browse the full collection.
         </p>
       </div>
       <div className={styles.projectGrid}>
         {projectItems.map((item) => (
           <article className={styles.projectCard} key={item.title}>
-            <div className={`${styles.projectVisual} ${item.borderClassName ?? ""}`}>
-              {item.mediaType === "video" ? (
-                <AmbientVideo className={styles.projectMedia} src={item.media} />
-              ) : (
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  className={`${styles.projectMedia} ${item.thumbnailClassName ?? ""}`}
-                  decoding="async"
-                  loading="lazy"
-                  src={item.media}
-                />
-              )}
-              {item.overlayLogo ? (
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  className={`${styles.projectOverlayLogo} ${item.overlayLogoClassName ?? ""}`}
-                  decoding="async"
-                  loading="lazy"
-                  src={item.overlayLogo}
-                />
-              ) : null}
-            </div>
-            <div className={styles.projectCopy}>
-              <h3>{item.title}</h3>
-              <p>{item.role}</p>
-            </div>
+            <Link className={styles.projectCardLink} to={`/projects/${item.slug}`}>
+              <div className={`${styles.projectVisual} ${item.borderClassName ?? ""}`}>
+                {item.mediaType === "video" ? (
+                  <AmbientVideo className={styles.projectMedia} src={item.media} />
+                ) : (
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    className={`${styles.projectMedia} ${item.thumbnailClassName ?? ""}`}
+                    decoding="async"
+                    loading="lazy"
+                    src={item.media}
+                  />
+                )}
+                {item.overlayLogo ? (
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    className={`${styles.projectOverlayLogo} ${item.overlayLogoClassName ?? ""}`}
+                    decoding="async"
+                    loading="lazy"
+                    src={item.overlayLogo}
+                  />
+                ) : null}
+              </div>
+              <div className={styles.projectCopy}>
+                <h3>{item.title}</h3>
+                <p>{item.role}</p>
+              </div>
+            </Link>
           </article>
         ))}
       </div>
@@ -391,58 +380,12 @@ function Projects() {
 
 function Contact() {
   return (
-    <section className={styles.contactSection} id="contact">
-      <div className={styles.contactBackdrop} aria-hidden="true">
-        <AmbientVideo className={styles.contactVideo} src={contactVideo} />
-        <div className={styles.contactBackdropShade} />
-      </div>
-      <div className={styles.contactHeader}>
-        <h2 className={styles.contactTitle}>Ready to get started?</h2>
-        <p className={styles.contactText}>
-          If you&apos;re interested in working with me just throw me a message
-          and I&apos;ll be more than happy to check how I can join your team!
-        </p>
-        <span aria-hidden="true" className={styles.contactUnderline} />
-      </div>
-      <div className={styles.contactCard}>
-        <div className={styles.contactPhoto}>
-          <img alt="Catalina Bohórquez" src={aboutPhoto} />
-        </div>
-        <div className={styles.contactInfo}>
-          <h3>Catalina Bohórquez R</h3>
-          <div className={styles.contactDetails}>
-            <div className={styles.contactIcons} aria-hidden="true">
-              {contactItems.map((item) => (
-                <img alt="" key={item.label} src={item.icon} />
-              ))}
-            </div>
-            <div className={styles.contactLinks}>
-              {contactItems.map((item) => (
-                <a
-                  href={item.href}
-                  key={item.label}
-                  {...getExternalLinkProps(item.href)}
-                >
-                  <span>{item.label}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className={styles.contactLinksMobile}>
-            {contactItems.map((item) => (
-              <a
-                href={item.href}
-                key={item.label}
-                {...getExternalLinkProps(item.href)}
-              >
-                <img alt="" aria-hidden="true" src={item.icon} />
-                <span>{item.label}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+    <ContactPanel
+      backgroundVideoSrc={contactVideo}
+      body="If you're interested in working with me, send me a message and I'll be happy to explore how I can support your team."
+      id="contact"
+      title="Ready to get started?"
+    />
   );
 }
 

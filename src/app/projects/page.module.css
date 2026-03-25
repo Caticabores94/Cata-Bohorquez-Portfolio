@@ -16,7 +16,7 @@
 .main {
   margin: 0 auto;
   max-width: 1662px;
-  padding: 0 75px;
+  padding: 0 var(--shell-padding);
   width: 100%;
 }
 
@@ -110,7 +110,7 @@
 .projectsPage {
   display: flex;
   flex-direction: column;
-  gap: 96px;
+  gap: 88px;
   padding: 100px 0 0;
   position: relative;
 }
@@ -151,7 +151,7 @@
   gap: 24px;
   margin: 0 auto;
   max-width: 1315px;
-  padding: 0 100px;
+  padding: 0 var(--content-gutter);
   text-align: center;
 }
 
@@ -176,7 +176,7 @@
 .sectionBlock {
   margin: 0 auto;
   max-width: 1515px;
-  padding: 0 100px;
+  padding: 0 var(--content-gutter);
 }
 
 .sectionTitle {
